@@ -1,0 +1,143 @@
+# depslib dependency file v1.0
+1608360093 source:c:\users\muhir\videos\CasseBrique\src\application.cpp
+	"Application.h"
+
+1608360073 c:\users\muhir\videos\CasseBrique\include\application.h
+	"CasseBrique.h"
+	<chrono>
+
+1608354692 c:\users\muhir\videos\CasseBrique\include\cassebrique.h
+	<memory>
+	"Ball.h"
+	"Raquette.h"
+	"Briques.h"
+	<vector>
+
+1608583972 c:\users\muhir\videos\CasseBrique\include\ball.h
+	"Position.h"
+	<ctime>
+	<graphics.h>
+	"Raquette.h"
+	"CasseBrique.h"
+	"constVariables.h"
+
+1605449820 c:\users\muhir\videos\CasseBrique\include\position.h
+	<cmath>
+
+1605587057 c:\users\muhir\videos\CasseBrique\include\raquette.h
+	"CasseBrique.h"
+	<graphics.h>
+	"Position.h"
+
+1605597086 c:\users\muhir\videos\CasseBrique\include\constvariables.h
+
+1608354668 c:\users\muhir\videos\CasseBrique\include\briques.h
+	"Position.h"
+	"Ball.h"
+
+1608584288 source:c:\users\muhir\videos\CasseBrique\src\ball.cpp
+	"Ball.h"
+
+1608358363 source:c:\users\muhir\videos\CasseBrique\src\balltest.cpp
+
+1608354668 source:c:\users\muhir\videos\CasseBrique\src\briques.cpp
+	"Briques.h"
+
+1608358319 source:c:\users\muhir\videos\CasseBrique\src\briquestest.cpp
+
+1608359166 source:c:\users\muhir\videos\CasseBrique\src\cassebrique.cpp
+	"CasseBrique.h"
+	<iostream>
+
+1608356456 source:c:\users\muhir\videos\CasseBrique\src\position.cpp
+	"Position.h"
+
+1608360082 source:c:\users\muhir\videos\CasseBrique\src\positiontest.cpp
+	"doctest.h"
+	"Position.h"
+
+1608357850 c:\users\muhir\videos\CasseBrique\include\doctest.h
+
+1605587076 source:c:\users\muhir\videos\CasseBrique\src\raquette.cpp
+	"Raquette.h"
+
+1608358345 source:c:\users\muhir\videos\CasseBrique\src\raquettetest.cpp
+
+1608583388 source:c:\users\muhir\videos\CasseBrique\testmain.cpp
+	<stdio.h>
+	<iostream>
+	<graphics.h>
+	"Application.h"
+	"doctest.h"
+
+1608360093 source:c:\users\muhir\videos\cassebrique\src\application.cpp
+	"Application.h"
+
+1608360073 c:\users\muhir\videos\cassebrique\include\application.h
+	"CasseBrique.h"
+	<chrono>
+
+1608354692 c:\users\muhir\videos\cassebrique\include\cassebrique.h
+	<memory>
+	"Ball.h"
+	"Raquette.h"
+	"Briques.h"
+	<vector>
+
+1608583972 c:\users\muhir\videos\cassebrique\include\ball.h
+	"Position.h"
+	<ctime>
+	<graphics.h>
+	"Raquette.h"
+	"CasseBrique.h"
+	"constVariables.h"
+
+1605449820 c:\users\muhir\videos\cassebrique\include\position.h
+	<cmath>
+
+1605587057 c:\users\muhir\videos\cassebrique\include\raquette.h
+	"CasseBrique.h"
+	<graphics.h>
+	"Position.h"
+
+1605597086 c:\users\muhir\videos\cassebrique\include\constvariables.h
+
+1608354668 c:\users\muhir\videos\cassebrique\include\briques.h
+	"Position.h"
+	"Ball.h"
+
+1608584288 source:c:\users\muhir\videos\cassebrique\src\ball.cpp
+	"Ball.h"
+
+1608358363 source:c:\users\muhir\videos\cassebrique\src\balltest.cpp
+
+1608585166 source:c:\users\muhir\videos\cassebrique\src\briques.cpp
+	"Briques.h"
+
+1608358319 source:c:\users\muhir\videos\cassebrique\src\briquestest.cpp
+
+1608359166 source:c:\users\muhir\videos\cassebrique\src\cassebrique.cpp
+	"CasseBrique.h"
+	<iostream>
+
+1608356456 source:c:\users\muhir\videos\cassebrique\src\position.cpp
+	"Position.h"
+
+1608360082 source:c:\users\muhir\videos\cassebrique\src\positiontest.cpp
+	"doctest.h"
+	"Position.h"
+
+1608357850 c:\users\muhir\videos\cassebrique\include\doctest.h
+
+1605587076 source:c:\users\muhir\videos\cassebrique\src\raquette.cpp
+	"Raquette.h"
+
+1608358345 source:c:\users\muhir\videos\cassebrique\src\raquettetest.cpp
+
+1608583388 source:c:\users\muhir\videos\cassebrique\testmain.cpp
+	<stdio.h>
+	<iostream>
+	<graphics.h>
+	"Application.h"
+	"doctest.h"
+
