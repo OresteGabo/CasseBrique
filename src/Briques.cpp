@@ -9,6 +9,7 @@ _brickRight { _position.x() + LARGEUR_BRIQUE / 2}
     _compteur=_compteurStatique++;
 }
 
+
 Briques::~Briques(){}
 int Briques::_compteurStatique=0;
 bool Briques::BallCollision(Ball*ball){
@@ -58,19 +59,7 @@ bool Briques::BallCollision(Ball*ball){
 
 }
 
-void Briques::afficher()const{
 
-	if (_vie > 0){
-            setcolor(couleur());
-			double x1=_position.x() - LARGEUR_BRIQUE / 2 + 1;
-			double y1= _position.y() - HAUTEUR_BRIQUE / 2 + 1;
-			double x2=_position.x() + LARGEUR_BRIQUE / 2 - 1;
-			double y2= _position.y() + HAUTEUR_BRIQUE / 2 - 1;
-			rectangle(x1,y1,x2,y2);
-            setfillstyle(SOLID_FILL,couleur());
-            floodfill(x1+2,y1+2,couleur());
-	}
-}
 int Briques::couleur()const{
     switch(_vie) {
       case 3 :
@@ -91,3 +80,10 @@ int Briques::couleur()const{
 }
 int Briques::vie()const{return _vie;}
 int Briques::compteur()const{return _compteur;}
+Position Briques::position()const{return _position;}
+int Briques::largeurBrique()const{
+    return LARGEUR_BRIQUE;
+}
+int Briques::hauteurBrique()const{
+    return HAUTEUR_BRIQUE;
+}

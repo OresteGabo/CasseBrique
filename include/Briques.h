@@ -1,3 +1,4 @@
+#pragma once
 #ifndef BRIQUES_H
 #define BRIQUES_H
 #include "Position.h"
@@ -8,11 +9,13 @@ class Briques
 public:
 	Briques(double xPos, double yPos,int);
 	~Briques();
-	void afficher()const;
 	bool BallCollision(Ball*ball);
     int couleur()const;
     int vie()const;
     int compteur()const;
+    Position position()const;
+    int largeurBrique()const;
+    int hauteurBrique()const;
 
 
     double brickTop()const{return _brickTop;}// = _position.y() - HAUTEUR_BRIQUE / 2;
@@ -34,6 +37,10 @@ private:
     double _brickBottom;// = _position.y() + HAUTEUR_BRIQUE / 2;
     double _brickLeft;// = _position.x() - LARGEUR_BRIQUE / 2;
     double _brickRight;// = _position.x() + LARGEUR_BRIQUE / 2;
+
+
+    static const int LARGEUR_BRIQUE=40;
+    static const int HAUTEUR_BRIQUE=20;
 };
 
 

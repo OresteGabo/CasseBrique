@@ -1,3 +1,4 @@
+#pragma once
 #ifndef POSITION_H
 #define POSITION_H
 #include<cmath>
@@ -15,8 +16,8 @@ class Position
         void x(double);
         void y(double);
         void xy(double x,double y);
-        double getDistance(const Position& p)const;
-        double getDistance(int x,int y)const;
+        double distance(const Position& p)const;
+        double distance(int x,int y)const;
 
     protected:
 

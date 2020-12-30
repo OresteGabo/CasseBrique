@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CASSEBRIQUE_H
 #define CASSEBRIQUE_H
 #include<memory>
@@ -18,14 +19,15 @@ public:
 
 	double positionSourie()const;
 	void logique(double tempsMS);
-	void afficher()const;
     void supprimerBrique(int);
     void MAJ();
+    Ball* balle()const;
+    Raquette* raquette()const;
+    vector<Briques> briques()const;
 private:
 	Ball* _ball;
 	Raquette* _raquette;
 	vector<Briques> _briques;
-
 	bool _playing;
 };
 

@@ -13,8 +13,9 @@ public:
 	~Raquette();
 
 	void repositionnerX(int xPos);
-	void afficher()const;
 	Position position()const;
+	int largeur()const;
+	//int hauteur()const;
 
 
 

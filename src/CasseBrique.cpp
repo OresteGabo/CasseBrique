@@ -2,30 +2,30 @@
 #include "CasseBrique.h"
 #include<iostream>
 CasseBrique::CasseBrique():
-    _ball{new Ball()},
-    _raquette{new Raquette(RESOLUTION_Y - 5)},
+    _ball{new Ball(10)},
+    _raquette{new Raquette(RESOLUTION_Y_PAR_DEFAUT - 5)},
     _playing{true}
 {
 
     for (int i = 2; i <4; i++){
-        for (int j = 0; j < 15; j++){
-            int posX = RESOLUTION_X / 2 + (j - 7) * LARGEUR_BRIQUE;
-            int posY = 100 + i * HAUTEUR_BRIQUE;
+        for (int j = 0; j < 10; j++){
+            int posX = RESOLUTION_X_PAR_DEFAUT / 3 + j * LARGEUR_BRIQUE_PAR_DEFAUT;
+            int posY = 100 + i * HAUTEUR_BRIQUE_PAR_DEFAUT;
             _briques.push_back(Briques(posX, posY,2));
         }
     }
     for (int i = 4; i < 5; i++){
-        for (int j = 0; j < 15; j++){
-            int posX = RESOLUTION_X / 2 + (j - 7) * LARGEUR_BRIQUE;
-            int posY = 100 + i * HAUTEUR_BRIQUE;
+        for (int j = 0; j < 10; j++){
+            int posX = RESOLUTION_X_PAR_DEFAUT / 3 + j  * LARGEUR_BRIQUE_PAR_DEFAUT;
+            int posY = 100 + i * HAUTEUR_BRIQUE_PAR_DEFAUT;
             _briques.push_back(Briques(posX, posY,1));
         }
     }
 
     for (int i = 0; i < 2; i++){
-        for (int j = 0; j < 15; j++){
-            int posX = RESOLUTION_X / 2 + (j - 7) * LARGEUR_BRIQUE;
-            int posY = 100 + i * HAUTEUR_BRIQUE;
+        for (int j = 0; j < 10; j++){
+            int posX = RESOLUTION_X_PAR_DEFAUT / 3 + j * LARGEUR_BRIQUE_PAR_DEFAUT;
+            int posY = 100 + i * HAUTEUR_BRIQUE_PAR_DEFAUT;
             _briques.push_back(Briques(posX, posY,3));
         }
     }
@@ -41,7 +41,6 @@ void CasseBrique::MAJ(){
         if(_briques[x].vie()==0){
             std::cout<<"N_"<<x<<" :is deleted:  N°"<<_briques[x].compteur()<<std::endl;
             supprimerBrique(_briques[x].compteur());
-
         }
     }
 }
@@ -86,11 +85,14 @@ void CasseBrique::logique(double tempsMS){
     }
 }
 
-void CasseBrique::afficher()const{
 
-    _ball->afficher();
-    _raquette->afficher();
-    for(int x=_briques.size()-1;x>=0;x--){
-        _briques[x].afficher();
-    }
+
+Ball* CasseBrique::balle()const{
+    return _ball;
+}
+Raquette* CasseBrique::raquette()const{
+    return _raquette;
+}
+vector<Briques> CasseBrique::briques()const{
+    return _briques;
 }

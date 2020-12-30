@@ -1,3 +1,4 @@
+#pragma once
 #ifndef BALL_H
 #define BALL_H
 #include"Position.h"
@@ -6,9 +7,12 @@
 #include "Raquette.h"
 #include "CasseBrique.h"
 #include"constVariables.h"
-class Ball{
+#include"Cercle.h"
+//#include"Application.h"
+//class Application;
+class Ball:public Cercle{
 public:
-	Ball();
+	Ball(double);
 	~Ball();
 
 	void avancer(double);
@@ -18,16 +22,15 @@ public:
 	void position(const Position&);
 	Position speed()const;
 	void speed(const Position&);
-	void afficher()const;
 	inline int rayon()const{return _rayon;}
 
 
 
 
 private:
-    Position _position;
+    //Position _position;
 	Position _speed;
-    int _rayon;
+    //double _rayon;
 
 
 

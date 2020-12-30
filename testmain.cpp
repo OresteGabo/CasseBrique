@@ -6,8 +6,7 @@
 #include"Application.h"
 
 
-int main( ){
-    initwindow( RESOLUTION_X , RESOLUTION_Y , "WinBGIm Demo" );
+int main(){
     Application app;
     closegraph();
     return 0 ;
