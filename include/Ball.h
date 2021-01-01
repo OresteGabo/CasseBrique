@@ -16,24 +16,18 @@ public:
 	~Ball();
 
 	void avancer(double);
-	void CheckHitsRaquette(double paddleX);
-	bool IsOutside();
+	void CheckHitsRaquette(double);
 	Position position()const;
 	void position(const Position&);
-	Position speed()const;
-	void speed(const Position&);
+	Position vitesse()const;
+	void vitesse(const Position&);
 	inline int rayon()const{return _rayon;}
 
 
 
 
 private:
-    //Position _position;
-	Position _speed;
-    //double _rayon;
-
-
-
+	Position _vitesse;
 };
 
 #endif // BALL_H

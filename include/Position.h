@@ -6,8 +6,8 @@
 class Position
 {
     public:
-        Position(double x,double y);
-        Position(double xy);
+        Position(double,double);
+        Position(double);
         Position();
 
         virtual ~Position();
@@ -15,9 +15,13 @@ class Position
         double y()const;
         void x(double);
         void y(double);
-        void xy(double x,double y);
-        double distance(const Position& p)const;
-        double distance(int x,int y)const;
+        void xy(double,double);
+        double distance(const Position&)const;
+        double distance(int,int)const;
+        bool operator<(const Position&)const;
+        bool operator>(const Position&)const;
+        bool estEntreX(const Position&,const Position&)const;
+        bool estEntreY(const Position&,const Position&)const;
 
     protected:
 

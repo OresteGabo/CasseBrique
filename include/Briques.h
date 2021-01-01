@@ -9,7 +9,7 @@ class Briques
 public:
 	Briques(double xPos, double yPos,int);
 	~Briques();
-	bool BallCollision(Ball*ball);
+	bool BallCollision(Ball*);
     int couleur()const;
     int vie()const;
     int compteur()const;

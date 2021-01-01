@@ -2,9 +2,9 @@
 #include "CasseBrique.h"
 #include<iostream>
 CasseBrique::CasseBrique():
-    _ball{new Ball(10)},
-    _raquette{new Raquette(RESOLUTION_Y_PAR_DEFAUT - 5)},
-    _playing{true}
+    _balle{new Ball(10)},
+    _raquette{new Raquette(RESOLUTION_Y_PAR_DEFAUT - 5)}
+   // _playing{true}
 {
 
     for (int i = 2; i <4; i++){
@@ -45,7 +45,7 @@ void CasseBrique::MAJ(){
     }
 }
 CasseBrique::~CasseBrique(){
-    delete _ball;
+    delete _balle;
     delete _raquette;
 }
 void CasseBrique::supprimerBrique(int val){
@@ -59,36 +59,58 @@ double CasseBrique::positionSourie()const{
 }
 
 void CasseBrique::logique(double tempsMS){
+    // Avancer la balle
+    _balle->avancer(tempsMS);
 
-    if (_playing){
+    // bouger la raquette a partir de la position du souri
+    _raquette->repositionnerX(positionSourie());
 
-        // Avancer la balle
-        _ball->avancer(tempsMS);
+    //chercher si la balle touche la raquette, puis changer sa speed en negative
+    _balle->CheckHitsRaquette(_raquette->position().x());
+    //collisionBalleRaquette();
 
-        // bouger la raquette a partir de la position du souri
-        _raquette->repositionnerX(positionSourie());
-
-        //chercher si la balle touche la raquette, puis changer sa speed en negative
-        _ball->CheckHitsRaquette(_raquette->position().x());
-
-        // Si la balle touche l'un des briques
-        for (int i = 0; i < 5; i++){
-            for (int j = 0; j < 15; j++){
-                _briques[i * 15 + j].BallCollision(_ball);
-            }
-        }
-
-        // si la balle va dans l'espace en dehors du jeux, le jeux sarrete
-        if (_ball->IsOutside()){
-            _playing = false;
+    // Si la balle touche l'un des briques
+    for (int i = 0; i < 5; i++){
+        for (int j = 0; j < 15; j++){
+            _briques[i * 15 + j].BallCollision(_balle);
         }
     }
+
+}
+bool CasseBrique::tousLesBriquesCasses()const{
+    for(int x=0;x<_briques.size();x++){
+        if(_briques[x].vie()>0)
+            return false;
+    }
+    return true;
+}
+bool CasseBrique::balleTJREnJeux()const{
+    return _balle->position().y() < RESOLUTION_Y_PAR_DEFAUT;
+}
+void CasseBrique::collisionBalleRaquette(){
+    /*
+
+	// Checks if the ball hits the Raquette. If it does, it bounces back
+	if (_position.y() > RESOLUTION_Y_PAR_DEFAUT - 20 && _vitesse.y() > 0){
+		if (_position.x() > RaquetteX - LARGEUR_RAQUETTE_PAR_DEFAUT / 2 &&
+            _position.x() < RaquetteX + LARGEUR_RAQUETTE_PAR_DEFAUT/2 ){
+			_vitesse.y( -_vitesse.y());
+		}
+	}
+
+    */
+    //double RaquetteX=_raquette->position().x();
+    //if (_balle->position().y() > RESOLUTION_Y_PAR_DEFAUT - 1 && _balle->vitesse().y() > 0){
+         //if(balle->position().x())
+		/*if (_balle->position().x() > RaquetteX - LARGEUR_RAQUETTE_PAR_DEFAUT / 2 &&
+            _balle->position().x() < RaquetteX + LARGEUR_RAQUETTE_PAR_DEFAUT/2 ){
+			_balle->vitesse().y( -_balle->vitesse().y());
+		}*/
+	//}
 }
 
-
-
 Ball* CasseBrique::balle()const{
-    return _ball;
+    return _balle;
 }
 Raquette* CasseBrique::raquette()const{
     return _raquette;

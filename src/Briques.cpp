@@ -28,28 +28,28 @@ bool Briques::BallCollision(Ball*ball){
 			double distanceY2 = abs(ballBottom - brickTop());
 
             // From bottom
-			if (ball->speed().y() < 0 && distanceY1 < distanceY2 && distanceY1 < distanceX1 && distanceY1 < distanceX2){
-				ball->speed().y( abs(ball->speed().y()));
+			if (ball->vitesse().y() < 0 && distanceY1 < distanceY2 && distanceY1 < distanceX1 && distanceY1 < distanceX2){
+				ball->vitesse().y( abs(ball->vitesse().y()));
 				_vie--;
 				return true;
 			}
 			// From top
-			if (ball->speed().y() > 0 && distanceY2 < distanceY1 && distanceY2 < distanceX1 && distanceY2 < distanceX2)
+			if (ball->vitesse().y() > 0 && distanceY2 < distanceY1 && distanceY2 < distanceX1 && distanceY2 < distanceX2)
 			{
-				ball->speed().y( -abs(ball->speed().y()));
+				ball->vitesse().y( -abs(ball->vitesse().y()));
 				_vie --;
 				return true;
 			}
 			// From left
-			if (ball->speed().x() > 0 && distanceX1 < distanceX2 && distanceX1 < distanceY1 && distanceX1 < distanceY2)
+			if (ball->vitesse().x() > 0 && distanceX1 < distanceX2 && distanceX1 < distanceY1 && distanceX1 < distanceY2)
 			{
-				ball->speed().x(-abs(ball->speed().x()));
+				ball->vitesse().x(-abs(ball->vitesse().x()));
 				_vie --;
 				return true;
 			}
 			// From right
-			if (ball->speed().x() < 0 && distanceX2 < distanceX1 && distanceX2 < distanceY1 && distanceX2 < distanceY2){
-				ball->speed().x(abs(ball->speed().x()));
+			if (ball->vitesse().x() < 0 && distanceX2 < distanceX1 && distanceX2 < distanceY1 && distanceX2 < distanceY2){
+				ball->vitesse().x(abs(ball->vitesse().x()));
 				_vie --;
 				return true;
 			}

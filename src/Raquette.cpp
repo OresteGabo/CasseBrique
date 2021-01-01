@@ -1,7 +1,7 @@
 #include "Raquette.h"
 
 
-Raquette::Raquette(double y):_position{Position(RESOLUTION_X_PAR_DEFAUT /2,RESOLUTION_Y_PAR_DEFAUT-20)}{}
+Raquette::Raquette(double y):_position{Position(RESOLUTION_X_PAR_DEFAUT /2,RESOLUTION_Y_PAR_DEFAUT-HAUTEUR_RAQUETTE_PAR_DEFAUT*2)}{}
 Raquette::~Raquette(){
 }
 void Raquette::repositionnerX(int xPos){

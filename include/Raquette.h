@@ -9,10 +9,10 @@
 
 class Raquette{
 public:
-	Raquette(double y);
+	Raquette(double);
 	~Raquette();
 
-	void repositionnerX(int xPos);
+	void repositionnerX(int);
 	Position position()const;
 	int largeur()const;
 	//int hauteur()const;

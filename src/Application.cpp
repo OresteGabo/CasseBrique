@@ -4,7 +4,7 @@
 Application::Application():
     _cassebrique{CasseBrique()},
     _raquette{Raquette(RESOLUTION_Y_PAR_DEFAUT-10)},
-    _tempsExec{0.006},
+    _tempsExec{0.003},
     _resolutionX{800},
     _resolutionY{600}
 {
@@ -16,18 +16,32 @@ Application::~Application()
 
 void Application::executer(){
     AfficheurWinbgi afficheur=AfficheurWinbgi();
-    bool running = true;
-    if(running)
-        initwindow( _resolutionX , _resolutionY , "WinBGIm Demo" );
-    while (running){
-        cleardevice();
-        mvtRaquette();
+    bool running = true,quit=false;
+    while(!quit){
+        if(running)
+            initwindow( _resolutionX , _resolutionY , "WinBGIm Demo" );
+        while (running){
+            cleardevice();
+            mvtRaquette();
 
-        // logique du jeux
-        _cassebrique.logique(_tempsExec);
-        afficheur.afficher(&_cassebrique);
+            // logique du jeux
+            _cassebrique.logique(_tempsExec);
+            afficheur.afficher(&_cassebrique);
+            if(_cassebrique.tousLesBriquesCasses()){
+                cleardevice();
+                cout<<"## FELICITATION VOUS AVEZ GAGNE##"<<endl;
+                afficheMenu();
+            }
+            if(!_cassebrique.balleTJREnJeux()){
+                cleardevice();
+                cout<<"## FELICITATION VOUS AVEZ PERDU##"<<endl;
+                afficheMenu();
+            }
+
+        }
 
     }
+
 }
 
 int Application::resolutionX()const{

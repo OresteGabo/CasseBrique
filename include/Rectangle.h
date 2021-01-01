@@ -17,8 +17,8 @@ class Rectangle
 
         void hauteur(double);
         void largeur(double);
-        bool collision(const Rectangle& r,int&)const;
-        bool collision(const Cercle& r,int&)const;
+        bool collision(const Rectangle&,int&)const;
+        bool collision(const Cercle&,int&)const;
         Position position()const;
         void position(const Position&);
 

@@ -14,7 +14,6 @@ double Rectangle::hauteur()const{
 double Rectangle::largeur()const{
     return _largeur;
 }
-
 void Rectangle::hauteur(double h){
     _hauteur=h;
 }
