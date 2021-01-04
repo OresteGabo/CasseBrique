@@ -15,6 +15,7 @@ public:
     Position position()const;
     int largeur()const;
     int hauteur()const;
+	void afficher()const;
 
 
     double brickTop()const{return _position.y() - HAUTEUR_BRIQUE / 2;}
