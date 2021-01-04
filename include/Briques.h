@@ -9,12 +9,13 @@ class Briques
 public:
 	Briques(double xPos, double yPos,int);
 	~Briques();
-	bool BallCollision(Ball*);
+	bool collision(Ball*);
     int couleur()const;
     int vie()const;
     Position position()const;
     int largeur()const;
     int hauteur()const;
+	void afficher()const;
 
 
     double brickTop()const{return _position.y() - HAUTEUR_BRIQUE / 2;}
@@ -24,7 +25,7 @@ public:
 
 private:
     Position _position;
-	int _vie;
+	//int _vie;
     static const int LARGEUR_BRIQUE=40;
     static const int HAUTEUR_BRIQUE=20;
 };

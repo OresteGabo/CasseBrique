@@ -45,7 +45,6 @@
 		<Unit filename="include/Cercle.h" />
 		<Unit filename="include/Position.h" />
 		<Unit filename="include/Raquette.h" />
-		<Unit filename="include/Rectangle.h" />
 		<Unit filename="include/constVariables.h" />
 		<Unit filename="src/AfficheurWinbgi.cpp" />
 		<Unit filename="src/Application.cpp" />
@@ -59,7 +58,6 @@
 		<Unit filename="src/PositionTest.cpp" />
 		<Unit filename="src/Raquette.cpp" />
 		<Unit filename="src/RaquetteTest.cpp" />
-		<Unit filename="src/Rectangle.cpp" />
 		<Unit filename="testmain.cpp" />
 		<Extensions>
 			<code_completion />

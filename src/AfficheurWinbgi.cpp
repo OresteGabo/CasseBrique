@@ -6,37 +6,24 @@ AfficheurWinbgi::~AfficheurWinbgi()
 {
 }
 void AfficheurWinbgi::afficher(CasseBrique* _cassebrique)const{
-    afficherBalle(_cassebrique);
-    afficherBriques(_cassebrique);
-    afficherRaquette(_cassebrique);
+    afficher(_cassebrique->balle());
+    afficher(_cassebrique->raquette());
+    afficher(_cassebrique->briques());
 }
-void AfficheurWinbgi::afficherBalle(CasseBrique* _cassebrique)const{
+void AfficheurWinbgi::afficher(Ball* b)const{
 
-    Ball* b=_cassebrique->balle();
     setcolor(LIGHTCYAN);
 	circle(b->position().x(),b->position().y(),b->rayon());
     setfillstyle(SOLID_FILL,LIGHTCYAN);
 	//floodfill(_cassebrique->balle()->position().x(),_cassebrique->balle()->position().y(),LIGHTCYAN);
 }
-void AfficheurWinbgi::afficherBriques(CasseBrique* _cassebrique)const{
-    int taille=_cassebrique->briques().size();
-    for(int x=0;x<taille;x++){
-        Briques b=_cassebrique->briques()[x];
-        if (b.vie() > 0){
-            setcolor(b.couleur());
-			double x1= b.position().x() - b.largeur() / 2 + 1;
-			double y1= b.position().y() - b.hauteur() / 2 + 1;
-			double x2= b.position().x() + b.largeur() / 2 - 1;
-			double y2= b.position().y() + b.hauteur() / 2 - 1;
-			rectangle(x1,y1,x2,y2);
-            setfillstyle(SOLID_FILL,b.couleur());
-            floodfill(x1+2,y1+2,b.couleur());
-        }
+void AfficheurWinbgi::afficher(const std::vector<Briques>& b)const{
+
+    for(int x=0;x<b.size();x++){
+        //b[x].affiche();
     }
 }
-void AfficheurWinbgi::afficherRaquette(CasseBrique* _cassebrique)const{
-    setcolor(GREEN);
-    Raquette *r=_cassebrique->raquette();
+void AfficheurWinbgi::afficher(Raquette* r)const{
     double x1= r->position().x() - r->largeur() / 2;
     double y1= r->position().y() - 5;
     double x2= r->position().x() + r->largeur() / 2;

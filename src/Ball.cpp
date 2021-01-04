@@ -1,10 +1,9 @@
 #include "Ball.h"
 Ball::Ball(double r):
     Cercle{r,Position(RESOLUTION_X_PAR_DEFAUT/2,RESOLUTION_Y_PAR_DEFAUT-20)},
-    _direction{rand()%300,-300},
+    _direction{175,-300},
     _vitesse{0.006}
 {
-    _direction.x(100);
 }
 
 Ball::~Ball(){}

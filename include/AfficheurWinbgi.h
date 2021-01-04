@@ -13,11 +13,10 @@ class AfficheurWinbgi
     protected:
 
     private:
-        //CasseBrique* _cassebrique;
 
-        void afficherBalle(CasseBrique*)const;
-        void afficherBriques(CasseBrique*)const;
-        void afficherRaquette(CasseBrique*)const;
+        void afficher(Ball*)const;
+        void afficher(const std::vector<Briques>& br)const;
+        void afficher(Raquette*)const;
 
 };
 

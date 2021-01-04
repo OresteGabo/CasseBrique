@@ -1,14 +1,51 @@
-#include "Briques.h"
+#include "BriquesCassable.h"
 
-Briques::Briques(double xPos, double yPos,int vie=2):
-    _position{Position(xPos,yPos)}
-//    _vie{vie}
+BriquesCassable::BriquesCassable(double xPos, double yPos,int vie):
+    Briques{xPos,yPos},
+    _vie{vie}
 {
+    //ctor
 }
 
+BriquesCassable::~BriquesCassable()
+{
+    //dtor
+}
+/*
+void BriquesCassable::afficher()const{
+	//if (_vie > 0){
+		setcolor(couleur());
+		double x1= _position.x() - largeur() / 2 + 1;
+		double y1= _position.y() - hauteur() / 2 + 1;
+		double x2= _position.x() + largeur() / 2 - 1;
+		double y2= _position.y() + hauteur() / 2 - 1;
+		rectangle(x1,y1,x2,y2);
+		setfillstyle(SOLID_FILL,couleur());
+		floodfill(x1+2,y1+2,couleur());
+	//}
+}
+*/
+int BriquesCassable::couleur()const{
 
-Briques::~Briques(){}
-bool Briques::collision(Ball*balle){
+    switch(_vie) {
+      case 3 :
+          return GREEN;
+         break;
+      case 2 :
+          return BROWN;
+         break;
+      case 1 :
+          return RED;
+         break;
+      case 0 :
+          return BLACK;
+         break;
+      default :
+          return GREEN;
+   }
+}
+/*
+bool BriquesCassable::BallCollision(Ball*balle){
 
 	//if (_vie > 0){
 
@@ -27,74 +64,34 @@ bool Briques::collision(Ball*balle){
             // bas
 			if (balle->direction().y() < 0 && distanceY1 < distanceY2 && distanceY1 < distanceX1 && distanceY1 < distanceX2){
 				balle->direction(Position(balle->direction().x(),-1*balle->direction().y()));
-				/*balle->ajusterVitesse(_vie);
-				_vie--;*/
+				//balle->changeDirectionY();
+				//balle->ajusterVitesse(_vie);
+				//_vie--;
 				return true;
 			}
 			// haut
 			if (balle->direction().y() > 0 && distanceY2 < distanceY1 && distanceY2 < distanceX1 && distanceY2 < distanceX2){
 				balle->direction(Position(balle->direction().x(),-1*balle->direction().y()));
-				/*balle->ajusterVitesse(_vie);
-				_vie --;*/
+				//balle->ajusterVitesse(_vie);
+				//_vie --;
 				return true;
 			}
 			// gauche
 
 			if (balle->direction().x() > 0 && distanceX1 < distanceX2 && distanceX1 < distanceY1 && distanceX1 < distanceY2){
 				balle->direction(Position(-1*balle->direction().x(),balle->direction().y()));
-				/*balle->ajusterVitesse(_vie);
-				_vie --;*/
+				//balle->ajusterVitesse(_vie);
+				//_vie --;
 				return true;
 			}
 			// droite
 			if (balle->direction().x() < 0 && distanceX2 < distanceX1 && distanceX2 < distanceY1 && distanceX2 < distanceY2){
 				balle->direction(Position(-1*balle->direction().x(),balle->direction().y()));
-				/*balle->ajusterVitesse(_vie);
-				_vie --;*/
+				//balle->ajusterVitesse(_vie);
+				//_vie --;
 				return true;
 			}
-
-	}
+		}
     return false;
 }
-
-/*
-int Briques::couleur()const{
-    switch(_vie) {
-      case 3 :
-          return GREEN;
-         break;
-      case 2 :
-          return BROWN;
-         break;
-      case 1 :
-          return RED;
-         break;
-      case 0 :
-          return BLACK;
-         break;
-      default :
-          return GREEN;
-   }
-}
-int Briques::vie()const{return _vie;}
 */
-Position Briques::position()const{return _position;}
-int Briques::largeur()const{
-    return LARGEUR_BRIQUE;
-}
-int Briques::hauteur()const{
-    return HAUTEUR_BRIQUE;
-}
-void Briques::afficher()const{
-	//if (_vie > 0){
-		setcolor(GREEN);
-		double x1= _position.x() - largeur() / 2 + 1;
-		double y1= _position.y() - hauteur() / 2 + 1;
-		double x2= _position.x() + largeur() / 2 - 1;
-		double y2= _position.y() + hauteur() / 2 - 1;
-		rectangle(x1,y1,x2,y2);
-		setfillstyle(SOLID_FILL,GREEN);
-		floodfill(x1+2,y1+2,GREEN);
-	//}
-}
