@@ -32,17 +32,16 @@ void Ball::ajusterVitesse(int soliditeBrique){
         _vitesse*=1.5;
     }
 }
-void Ball::collisionRaquette(double RaquetteX){
-	// Checks if the ball hits the Raquette. If it does, it bounces back
+void Ball::collision(const Raquette&r){
+    //detecter la collision avec la raquette, et faire le rebond
 	if (_position.y() > RESOLUTION_Y_PAR_DEFAUT - 20 && _direction.y() > 0){
-		if (_position.x() > RaquetteX - LARGEUR_RAQUETTE_PAR_DEFAUT / 2 &&
-            _position.x() < RaquetteX + LARGEUR_RAQUETTE_PAR_DEFAUT/2 ){
+		if (_position.x() > r.position().x() - r.largeur() / 2 &&
+            _position.x() < r.position().x() + r.largeur()/2 ){
 			_direction.y( -_direction.y());
 		}
 	}
 }
-void Ball::collisionBrique(Briques& br){
-}
+
 Position Ball::position()const{
     return _position;
 }
@@ -60,10 +59,4 @@ void Ball::vitesse(double v){
 }
 double Ball::vitesse()const{
     return _vitesse;
-}
-void Ball::changeDirectionX(){
-    _direction.x(1*_direction.x());
-}
-void Ball::changeDirectionY(){
-    _direction.y(1*_direction.y());
 }

@@ -39,14 +39,3 @@ double Position::distance(int x,int y)const{
 }
 Position::~Position()
 {}
-bool Position::operator<(const Position&)const{
-
-}
-bool Position::operator>(const Position&)const{
-}
-bool Position::estEntreX(const Position& d,const Position& f)const{
-    return (_x>=d.x() && _x<=f.x()) || (_x<=d.x() && _x>=f.x()) ;
-}
-bool Position::estEntreY(const Position& d,const Position& f)const{
-    return (_y>=d.y() && _y<=f.y()) || (_y<=d.y() && _y>=f.y());
-}

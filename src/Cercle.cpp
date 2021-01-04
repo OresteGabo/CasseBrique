@@ -12,16 +12,3 @@ double Cercle::rayon()const{
 void Cercle::rayon(double val){
     _rayon=val;
 }
-double Cercle::diametre()const{
-    return _rayon*2;
-}
-double Cercle::circonference()const{
-    return _rayon*2*3.14;
-}
-double Cercle::surface()const{
-    return _rayon*_rayon*2*3.14;
-}
-/*bool Cercle::collidedRectangle(const Rectangle&r,SIDE&)const{
-
-}
-*/

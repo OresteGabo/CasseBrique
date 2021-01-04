@@ -37,9 +37,9 @@ void AfficheurWinbgi::afficherBriques(CasseBrique* _cassebrique)const{
 void AfficheurWinbgi::afficherRaquette(CasseBrique* _cassebrique)const{
     setcolor(GREEN);
     Raquette *r=_cassebrique->raquette();
-    double x1= r->position().x() - LARGEUR_RAQUETTE_PAR_DEFAUT / 2;
+    double x1= r->position().x() - r->largeur() / 2;
     double y1= r->position().y() - 5;
-    double x2= r->position().x() + LARGEUR_RAQUETTE_PAR_DEFAUT / 2;
+    double x2= r->position().x() + r->largeur() / 2;
     double y2= r->position().y() + 5;
     rectangle(x1,y1,x2,y2);
 }

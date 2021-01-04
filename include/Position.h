@@ -18,12 +18,6 @@ class Position
         void xy(double,double);
         double distance(const Position&)const;
         double distance(int,int)const;
-        bool operator<(const Position&)const;
-        bool operator>(const Position&)const;
-        bool estEntreX(const Position&,const Position&)const;
-        bool estEntreY(const Position&,const Position&)const;
-
-    protected:
 
     private:
         double _x;

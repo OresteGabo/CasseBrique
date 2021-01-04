@@ -19,19 +19,17 @@ public:
 
 	double positionSourie()const;
 	void logique();
-    void supprimerBrique(int);
-    void MAJ();
+
     Ball* balle()const;
     Raquette* raquette()const;
     vector<Briques> briques()const;
     bool tousLesBriquesCasses()const;
     bool balleTJREnJeux()const;
-    void collisionBalleRaquette();
+
 private:
 	Ball* _balle;
 	Raquette* _raquette;
 	vector<Briques> _briques;
-	//bool _playing;
 };
 
 

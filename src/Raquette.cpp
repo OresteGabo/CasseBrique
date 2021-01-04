@@ -22,4 +22,6 @@ Position Raquette::position()const{
 int Raquette::largeur()const{
     return LARGEUR_RAQUETTE_PAR_DEFAUT;
 }
-
+int Raquette::hauteur()const{
+    return HAUTEUR_RAQUETTE_PAR_DEFAUT;
+}

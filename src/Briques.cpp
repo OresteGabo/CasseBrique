@@ -1,17 +1,13 @@
 #include "Briques.h"
 
-Briques::Briques(double xPos, double yPos,int vie=2):_position{Position(xPos,yPos)},_vie{vie},
-_brickTop { _position.y() - HAUTEUR_BRIQUE / 2},
-_brickBottom { _position.y() + HAUTEUR_BRIQUE / 2},
-_brickLeft { _position.x() - LARGEUR_BRIQUE / 2},
-_brickRight { _position.x() + LARGEUR_BRIQUE / 2}
+Briques::Briques(double xPos, double yPos,int vie=2):
+    _position{Position(xPos,yPos)},
+    _vie{vie}
 {
-    _compteur=_compteurStatique++;
 }
 
 
 Briques::~Briques(){}
-int Briques::_compteurStatique=0;
 bool Briques::BallCollision(Ball*balle){
 
 	if (_vie > 0){
@@ -47,8 +43,6 @@ bool Briques::BallCollision(Ball*balle){
 
 			if (balle->direction().x() > 0 && distanceX1 < distanceX2 && distanceX1 < distanceY1 && distanceX1 < distanceY2){
 				balle->direction(Position(-1*balle->direction().x(),balle->direction().y()));
-				//balle->changeDirectionX();
-				//balle->changeDirectionX();
 				balle->ajusterVitesse(_vie);
 				_vie --;
 				return true;
@@ -57,7 +51,6 @@ bool Briques::BallCollision(Ball*balle){
 			if (balle->direction().x() < 0 && distanceX2 < distanceX1 && distanceX2 < distanceY1 && distanceX2 < distanceY2){
 				balle->direction(Position(-1*balle->direction().x(),balle->direction().y()));
 				balle->ajusterVitesse(_vie);
-				//balle->changeDirectionY();
 				_vie --;
 				return true;
 			}
@@ -86,7 +79,6 @@ int Briques::couleur()const{
    }
 }
 int Briques::vie()const{return _vie;}
-int Briques::compteur()const{return _compteur;}
 Position Briques::position()const{return _position;}
 int Briques::largeurBrique()const{
     return LARGEUR_BRIQUE;

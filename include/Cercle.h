@@ -1,11 +1,9 @@
 #pragma once
 #ifndef CERCLE_H
 #define CERCLE_H
-#include"Rectangle.h"
 #include<cmath>
 #include<iostream>
-
-//enum SIDE{NORD,EST,SUD,OUEST};
+#include"Position.h"
 class Cercle{
     public:
         /** Default constructor */
@@ -13,8 +11,6 @@ class Cercle{
         /** Default destructor */
         virtual ~Cercle();
         double rayon()const;
-        double diametre()const;
-        double circonference()const;
         double surface()const;
         Position position()const;
         void rayon(double val);

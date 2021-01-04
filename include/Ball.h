@@ -18,8 +18,7 @@ public:
 	~Ball();
 
 	void avancer();
-	void collisionRaquette(double);
-	void collisionBrique(Briques& br);
+	void collision(const Raquette&r);
 
 	Position position()const;
 	void position(const Position&);
@@ -28,8 +27,6 @@ public:
 	inline int rayon()const{return _rayon;}
 	void vitesse(double);
 	double vitesse()const;
-	void changeDirectionX();
-	void changeDirectionY();
 	void ajusterVitesse(int);
 
 private:
