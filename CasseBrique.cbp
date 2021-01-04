@@ -34,6 +34,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ApplicationTest.cpp" />
+		<Unit filename="CasseBriqueTest.cpp" />
 		<Unit filename="doctest.h" />
 		<Unit filename="include/AfficheurWinbgi.h" />
 		<Unit filename="include/Application.h" />

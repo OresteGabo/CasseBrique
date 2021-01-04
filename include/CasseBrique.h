@@ -18,7 +18,7 @@ public:
 	~CasseBrique();
 
 	double positionSourie()const;
-	void logique(double tempsMS);
+	void logique();
     void supprimerBrique(int);
     void MAJ();
     Ball* balle()const;

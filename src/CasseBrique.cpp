@@ -58,15 +58,15 @@ double CasseBrique::positionSourie()const{
     return double(cursorPosition.x);
 }
 
-void CasseBrique::logique(double tempsMS){
+void CasseBrique::logique(){
     // Avancer la balle
-    _balle->avancer(tempsMS);
+    _balle->avancer();
 
     // bouger la raquette a partir de la position du souri
     _raquette->repositionnerX(positionSourie());
 
     //chercher si la balle touche la raquette, puis changer sa speed en negative
-    _balle->CheckHitsRaquette(_raquette->position().x());
+    _balle->collisionRaquette(_raquette->position().x());
     //collisionBalleRaquette();
 
     // Si la balle touche l'un des briques
@@ -78,7 +78,7 @@ void CasseBrique::logique(double tempsMS){
 
 }
 bool CasseBrique::tousLesBriquesCasses()const{
-    for(int x=0;x<_briques.size();x++){
+    for(unsigned int x=0;x<_briques.size();x++){
         if(_briques[x].vie()>0)
             return false;
     }

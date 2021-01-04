@@ -15,9 +15,12 @@ Position::Position():
 {
 }
 
-void Position::x(double val){_x=val;
+void Position::x(double val){
+    _x=val;
 }
-void Position::y(double val){_y=val;}
+void Position::y(double val){
+    _y=val;
+}
 void Position::xy(double x,double y){
     _x=x;
     _y=y;

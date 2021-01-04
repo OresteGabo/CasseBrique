@@ -70,7 +70,7 @@
 	"Application.h"
 	"doctest.h"
 
-1609511682 source:c:\users\muhir\videos\cassebrique\src\application.cpp
+1609718226 source:c:\users\muhir\videos\cassebrique\src\application.cpp
 	"Application.h"
 	"AfficheurWinbgi.h"
 
@@ -79,14 +79,14 @@
 	<chrono>
 	<iostream>
 
-1609511897 c:\users\muhir\videos\cassebrique\include\cassebrique.h
+1609718178 c:\users\muhir\videos\cassebrique\include\cassebrique.h
 	<memory>
 	"Ball.h"
 	"Raquette.h"
 	"Briques.h"
 	<vector>
 
-1609512801 c:\users\muhir\videos\cassebrique\include\ball.h
+1609719562 c:\users\muhir\videos\cassebrique\include\ball.h
 	"Position.h"
 	<ctime>
 	<graphics.h>
@@ -94,6 +94,7 @@
 	"CasseBrique.h"
 	"constVariables.h"
 	"Cercle.h"
+	"Briques.h"
 
 1609515681 c:\users\muhir\videos\cassebrique\include\position.h
 	<cmath>
@@ -109,21 +110,21 @@
 	"Position.h"
 	"Ball.h"
 
-1609511571 source:c:\users\muhir\videos\cassebrique\src\ball.cpp
+1609719648 source:c:\users\muhir\videos\cassebrique\src\ball.cpp
 	"Ball.h"
 
 1608358363 source:c:\users\muhir\videos\cassebrique\src\balltest.cpp
 
-1609511544 source:c:\users\muhir\videos\cassebrique\src\briques.cpp
+1609719562 source:c:\users\muhir\videos\cassebrique\src\briques.cpp
 	"Briques.h"
 
 1608358319 source:c:\users\muhir\videos\cassebrique\src\briquestest.cpp
 
-1609515652 source:c:\users\muhir\videos\cassebrique\src\cassebrique.cpp
+1609719075 source:c:\users\muhir\videos\cassebrique\src\cassebrique.cpp
 	"CasseBrique.h"
 	<iostream>
 
-1609126326 source:c:\users\muhir\videos\cassebrique\src\position.cpp
+1609719075 source:c:\users\muhir\videos\cassebrique\src\position.cpp
 	"Position.h"
 
 1609298407 source:c:\users\muhir\videos\cassebrique\src\positiontest.cpp
@@ -144,10 +145,10 @@
 	"Application.h"
 	"doctest.h"
 
-1609126250 source:c:\users\muhir\videos\cassebrique\src\cercle.cpp
+1609716751 source:c:\users\muhir\videos\cassebrique\src\cercle.cpp
 	"Cercle.h"
 
-1609126121 c:\users\muhir\videos\cassebrique\include\cercle.h
+1609719075 c:\users\muhir\videos\cassebrique\include\cercle.h
 	"Rectangle.h"
 	<cmath>
 	<iostream>
@@ -164,4 +165,11 @@
 
 1609305067 c:\users\muhir\videos\cassebrique\include\afficheurwinbgi.h
 	"CasseBrique.h"
+
+1609614270 source:c:\users\muhir\videos\cassebrique\cassebriquetest.cpp
+	<doctest.h>
+
+1609631678 source:c:\users\muhir\videos\cassebrique\applicationtest.cpp
+	<doctest.h>
+	"Application.h"
 

@@ -5,8 +5,7 @@
 #include<cmath>
 #include<iostream>
 
-enum SIDE{NORD,EST,SUD,OUEST};
-//class Rectangle;
+//enum SIDE{NORD,EST,SUD,OUEST};
 class Cercle{
     public:
         /** Default constructor */
@@ -18,13 +17,11 @@ class Cercle{
         double circonference()const;
         double surface()const;
         Position position()const;
-        //bool collidedRectangle(const Rectangle&r,SIDE&)const;
+        void rayon(double val);
 
     protected:
         double _rayon;
         Position _position;
-    private:
-        void rayon(double);
 
 };
 

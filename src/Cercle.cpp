@@ -9,6 +9,9 @@ Cercle::~Cercle()
 double Cercle::rayon()const{
     return _rayon;
 }
+void Cercle::rayon(double val){
+    _rayon=val;
+}
 double Cercle::diametre()const{
     return _rayon*2;
 }

@@ -12,13 +12,14 @@ _brickRight { _position.x() + LARGEUR_BRIQUE / 2}
 
 Briques::~Briques(){}
 int Briques::_compteurStatique=0;
-bool Briques::BallCollision(Ball*ball){
+bool Briques::BallCollision(Ball*balle){
+
 	if (_vie > 0){
 
-		double ballTop = ball->position().y() - 10;
-		double ballBottom = ball->position().y() + 10;
-		double ballLeft = ball->position().x() - 10;
-		double ballRight = ball->position().x() + 10;
+		double ballTop = balle->position().y() - 10;
+		double ballBottom = balle->position().y() + 10;
+		double ballLeft = balle->position().x() - 10;
+		double ballRight = balle->position().x() + 10;
 
 		// If it's a collision
 		if (ballTop < brickBottom() && ballBottom > brickTop() && ballRight > brickLeft() && ballLeft < brickRight()){
@@ -27,36 +28,42 @@ bool Briques::BallCollision(Ball*ball){
 			double distanceY1 = abs(ballTop - brickBottom());
 			double distanceY2 = abs(ballBottom - brickTop());
 
-            // From bottom
-			if (ball->vitesse().y() < 0 && distanceY1 < distanceY2 && distanceY1 < distanceX1 && distanceY1 < distanceX2){
-				ball->vitesse().y( abs(ball->vitesse().y()));
+            // bas
+			if (balle->direction().y() < 0 && distanceY1 < distanceY2 && distanceY1 < distanceX1 && distanceY1 < distanceX2){
+				balle->direction(Position(balle->direction().x(),-1*balle->direction().y()));
+				//balle->changeDirectionY();
+				balle->ajusterVitesse(_vie);
 				_vie--;
 				return true;
 			}
-			// From top
-			if (ball->vitesse().y() > 0 && distanceY2 < distanceY1 && distanceY2 < distanceX1 && distanceY2 < distanceX2)
-			{
-				ball->vitesse().y( -abs(ball->vitesse().y()));
+			// haut
+			if (balle->direction().y() > 0 && distanceY2 < distanceY1 && distanceY2 < distanceX1 && distanceY2 < distanceX2){
+				balle->direction(Position(balle->direction().x(),-1*balle->direction().y()));
+				balle->ajusterVitesse(_vie);
 				_vie --;
 				return true;
 			}
-			// From left
-			if (ball->vitesse().x() > 0 && distanceX1 < distanceX2 && distanceX1 < distanceY1 && distanceX1 < distanceY2)
-			{
-				ball->vitesse().x(-abs(ball->vitesse().x()));
+			// gauche
+
+			if (balle->direction().x() > 0 && distanceX1 < distanceX2 && distanceX1 < distanceY1 && distanceX1 < distanceY2){
+				balle->direction(Position(-1*balle->direction().x(),balle->direction().y()));
+				//balle->changeDirectionX();
+				//balle->changeDirectionX();
+				balle->ajusterVitesse(_vie);
 				_vie --;
 				return true;
 			}
-			// From right
-			if (ball->vitesse().x() < 0 && distanceX2 < distanceX1 && distanceX2 < distanceY1 && distanceX2 < distanceY2){
-				ball->vitesse().x(abs(ball->vitesse().x()));
+			// droite
+			if (balle->direction().x() < 0 && distanceX2 < distanceX1 && distanceX2 < distanceY1 && distanceX2 < distanceY2){
+				balle->direction(Position(-1*balle->direction().x(),balle->direction().y()));
+				balle->ajusterVitesse(_vie);
+				//balle->changeDirectionY();
 				_vie --;
 				return true;
 			}
 		}else{return false;}
 	}
     return false;
-
 }
 
 
