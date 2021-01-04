@@ -70,23 +70,23 @@
 	"Application.h"
 	"doctest.h"
 
-1609720182 source:c:\users\muhir\videos\cassebrique\src\application.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\src\application.cpp
 	"Application.h"
 	"AfficheurWinbgi.h"
 
-1609720182 c:\users\muhir\videos\cassebrique\include\application.h
+1609765061 c:\users\muhir\videos\cassebrique\include\application.h
 	"CasseBrique.h"
 	<chrono>
 	<iostream>
 
-1609756328 c:\users\muhir\videos\cassebrique\include\cassebrique.h
+1609765061 c:\users\muhir\videos\cassebrique\include\cassebrique.h
 	<memory>
 	"Ball.h"
 	"Raquette.h"
 	"Briques.h"
 	<vector>
 
-1609758904 c:\users\muhir\videos\cassebrique\include\ball.h
+1609765061 c:\users\muhir\videos\cassebrique\include\ball.h
 	"Position.h"
 	<ctime>
 	<graphics.h>
@@ -96,59 +96,59 @@
 	"Cercle.h"
 	"Briques.h"
 
-1609756522 c:\users\muhir\videos\cassebrique\include\position.h
+1609765061 c:\users\muhir\videos\cassebrique\include\position.h
 	<cmath>
 
-1609757508 c:\users\muhir\videos\cassebrique\include\raquette.h
+1609765061 c:\users\muhir\videos\cassebrique\include\raquette.h
 	"CasseBrique.h"
 	<graphics.h>
 	"Position.h"
 
-1609758067 c:\users\muhir\videos\cassebrique\include\constvariables.h
+1609765061 c:\users\muhir\videos\cassebrique\include\constvariables.h
 
-1609759442 c:\users\muhir\videos\cassebrique\include\briques.h
+1609765061 c:\users\muhir\videos\cassebrique\include\briques.h
 	"Position.h"
 	"Ball.h"
 
-1609757879 source:c:\users\muhir\videos\cassebrique\src\ball.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\src\ball.cpp
 	"Ball.h"
 
-1609720182 source:c:\users\muhir\videos\cassebrique\src\balltest.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\src\balltest.cpp
 
-1609759474 source:c:\users\muhir\videos\cassebrique\src\briques.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\src\briques.cpp
 	"Briques.h"
 
-1609720182 source:c:\users\muhir\videos\cassebrique\src\briquestest.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\src\briquestest.cpp
 
-1609757864 source:c:\users\muhir\videos\cassebrique\src\cassebrique.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\src\cassebrique.cpp
 	"CasseBrique.h"
 	<iostream>
 
-1609756538 source:c:\users\muhir\videos\cassebrique\src\position.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\src\position.cpp
 	"Position.h"
 
-1609720182 source:c:\users\muhir\videos\cassebrique\src\positiontest.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\src\positiontest.cpp
 	"doctest.h"
 	"Position.h"
 
-1609720182 c:\users\muhir\videos\cassebrique\include\doctest.h
+1609765061 c:\users\muhir\videos\cassebrique\include\doctest.h
 
-1609758823 source:c:\users\muhir\videos\cassebrique\src\raquette.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\src\raquette.cpp
 	"Raquette.h"
 
-1609720182 source:c:\users\muhir\videos\cassebrique\src\raquettetest.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\src\raquettetest.cpp
 
-1609720182 source:c:\users\muhir\videos\cassebrique\testmain.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\testmain.cpp
 	<stdio.h>
 	<iostream>
 	<graphics.h>
 	"Application.h"
 	"doctest.h"
 
-1609758130 source:c:\users\muhir\videos\cassebrique\src\cercle.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\src\cercle.cpp
 	"Cercle.h"
 
-1609758129 c:\users\muhir\videos\cassebrique\include\cercle.h
+1609765061 c:\users\muhir\videos\cassebrique\include\cercle.h
 	<cmath>
 	<iostream>
 	"Position.h"
@@ -160,16 +160,16 @@
 1609720182 source:c:\users\muhir\videos\cassebrique\src\rectangle.cpp
 	"Rectangle.h"
 
-1609759462 source:c:\users\muhir\videos\cassebrique\src\afficheurwinbgi.cpp
+1609768011 source:c:\users\muhir\videos\cassebrique\src\afficheurwinbgi.cpp
 	"AfficheurWinbgi.h"
 
-1609720182 c:\users\muhir\videos\cassebrique\include\afficheurwinbgi.h
+1609765061 c:\users\muhir\videos\cassebrique\include\afficheurwinbgi.h
 	"CasseBrique.h"
 
-1609720182 source:c:\users\muhir\videos\cassebrique\cassebriquetest.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\cassebriquetest.cpp
 	<doctest.h>
 
-1609720182 source:c:\users\muhir\videos\cassebrique\applicationtest.cpp
+1609765061 source:c:\users\muhir\videos\cassebrique\applicationtest.cpp
 	<doctest.h>
 	"Application.h"
 

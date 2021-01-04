@@ -18,9 +18,9 @@ void AfficheurWinbgi::afficher(Ball* b)const{
 	//floodfill(_cassebrique->balle()->position().x(),_cassebrique->balle()->position().y(),LIGHTCYAN);
 }
 void AfficheurWinbgi::afficher(const std::vector<Briques>& b)const{
-   
-    for(int x=0;x<b.size();x++){
-        b.afficher();
+
+    for(unsigned int x=0;x<b.size();x++){
+        b[x].afficher();
     }
 }
 void AfficheurWinbgi::afficher(Raquette* r)const{
