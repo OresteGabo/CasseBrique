@@ -55,16 +55,16 @@ void CasseBrique::logique(){
     // Si la balle touche l'un des briques
     for (int i = 0; i < 5; i++){
         for (int j = 0; j < 15; j++){
-            _briques[i * 15 + j].collision(_balle);
+            _briques[i * 15 + j].BallCollision(_balle);
         }
     }
 
 }
 bool CasseBrique::tousLesBriquesCasses()const{
-    /*for(unsigned int x=0;x<_briques.size();x++){
+    for(unsigned int x=0;x<_briques.size();x++){
         if(_briques[x].vie()>0)
             return false;
-    }*/
+    }
     return true;
 }
 bool CasseBrique::balleTJREnJeux()const{
