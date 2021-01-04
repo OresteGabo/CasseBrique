@@ -86,7 +86,7 @@
 	"Briques.h"
 	<vector>
 
-1609757821 c:\users\muhir\videos\cassebrique\include\ball.h
+1609758904 c:\users\muhir\videos\cassebrique\include\ball.h
 	"Position.h"
 	<ctime>
 	<graphics.h>
@@ -106,7 +106,7 @@
 
 1609758067 c:\users\muhir\videos\cassebrique\include\constvariables.h
 
-1609756386 c:\users\muhir\videos\cassebrique\include\briques.h
+1609759442 c:\users\muhir\videos\cassebrique\include\briques.h
 	"Position.h"
 	"Ball.h"
 
@@ -115,7 +115,7 @@
 
 1609720182 source:c:\users\muhir\videos\cassebrique\src\balltest.cpp
 
-1609756427 source:c:\users\muhir\videos\cassebrique\src\briques.cpp
+1609759474 source:c:\users\muhir\videos\cassebrique\src\briques.cpp
 	"Briques.h"
 
 1609720182 source:c:\users\muhir\videos\cassebrique\src\briquestest.cpp
@@ -133,7 +133,7 @@
 
 1609720182 c:\users\muhir\videos\cassebrique\include\doctest.h
 
-1609757508 source:c:\users\muhir\videos\cassebrique\src\raquette.cpp
+1609758823 source:c:\users\muhir\videos\cassebrique\src\raquette.cpp
 	"Raquette.h"
 
 1609720182 source:c:\users\muhir\videos\cassebrique\src\raquettetest.cpp
@@ -145,7 +145,7 @@
 	"Application.h"
 	"doctest.h"
 
-1609720182 source:c:\users\muhir\videos\cassebrique\src\cercle.cpp
+1609758130 source:c:\users\muhir\videos\cassebrique\src\cercle.cpp
 	"Cercle.h"
 
 1609758129 c:\users\muhir\videos\cassebrique\include\cercle.h
@@ -160,7 +160,7 @@
 1609720182 source:c:\users\muhir\videos\cassebrique\src\rectangle.cpp
 	"Rectangle.h"
 
-1609757540 source:c:\users\muhir\videos\cassebrique\src\afficheurwinbgi.cpp
+1609759462 source:c:\users\muhir\videos\cassebrique\src\afficheurwinbgi.cpp
 	"AfficheurWinbgi.h"
 
 1609720182 c:\users\muhir\videos\cassebrique\include\afficheurwinbgi.h
@@ -275,4 +275,10 @@
 	<graphics.h>
 	"Application.h"
 	"doctest.h"
+
+1609759177 source:c:\users\muhir\videos\cassebrique\src\briquescassables.cpp
+	"BriquesCassables.h"
+
+1609759412 c:\users\muhir\videos\cassebrique\include\briquescassables.h
+	"Briques.h"
 

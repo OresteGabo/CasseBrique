@@ -24,10 +24,10 @@ void AfficheurWinbgi::afficherBriques(CasseBrique* _cassebrique)const{
         Briques b=_cassebrique->briques()[x];
         if (b.vie() > 0){
             setcolor(b.couleur());
-			double x1= b.position().x() - b.largeurBrique() / 2 + 1;
-			double y1= b.position().y() - b.hauteurBrique() / 2 + 1;
-			double x2= b.position().x() + b.largeurBrique() / 2 - 1;
-			double y2= b.position().y() + b.hauteurBrique() / 2 - 1;
+			double x1= b.position().x() - b.largeur() / 2 + 1;
+			double y1= b.position().y() - b.hauteur() / 2 + 1;
+			double x2= b.position().x() + b.largeur() / 2 - 1;
+			double y2= b.position().y() + b.hauteur() / 2 - 1;
 			rectangle(x1,y1,x2,y2);
             setfillstyle(SOLID_FILL,b.couleur());
             floodfill(x1+2,y1+2,b.couleur());

@@ -9,9 +9,7 @@
 #include"constVariables.h"
 #include"Cercle.h"
 #include"Briques.h"
-//class Brique;
-//#include"Application.h"
-//class Application;
+class Raquette;
 class Ball:public Cercle{
 public:
 	Ball(double);

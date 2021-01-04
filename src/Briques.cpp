@@ -80,9 +80,9 @@ int Briques::couleur()const{
 }
 int Briques::vie()const{return _vie;}
 Position Briques::position()const{return _position;}
-int Briques::largeurBrique()const{
+int Briques::largeur()const{
     return LARGEUR_BRIQUE;
 }
-int Briques::hauteurBrique()const{
+int Briques::hauteur()const{
     return HAUTEUR_BRIQUE;
 }

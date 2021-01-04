@@ -14,8 +14,6 @@ void Raquette::repositionnerX(int xPos){
 		_position.x( RESOLUTION_X_PAR_DEFAUT - LARGEUR_RAQUETTE_PAR_DEFAUT / 2);
 	}
 }
-
-
 Position Raquette::position()const{
     return _position;
 }

@@ -12,10 +12,9 @@ public:
 	bool BallCollision(Ball*);
     int couleur()const;
     int vie()const;
-    int compteur()const;
     Position position()const;
-    int largeurBrique()const;
-    int hauteurBrique()const;
+    int largeur()const;
+    int hauteur()const;
 
 
     double brickTop()const{return _position.y() - HAUTEUR_BRIQUE / 2;}
