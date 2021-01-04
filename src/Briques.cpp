@@ -86,3 +86,15 @@ int Briques::largeur()const{
 int Briques::hauteur()const{
     return HAUTEUR_BRIQUE;
 }
+void Briques::afficher()const{
+	if (_vie > 0){
+		setcolor(couleur());
+		double x1= _position.x() - largeur() / 2 + 1;
+		double y1= _position.y() - hauteur() / 2 + 1;
+		double x2= _position.x() + largeur() / 2 - 1;
+		double y2= _position.y() + hauteur() / 2 - 1;
+		rectangle(x1,y1,x2,y2);
+		setfillstyle(SOLID_FILL,couleur());
+		floodfill(x1+2,y1+2,couleur());
+	}
+}
