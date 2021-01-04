@@ -20,7 +20,7 @@ void AfficheurWinbgi::afficher(Ball* b)const{
 void AfficheurWinbgi::afficher(const std::vector<Briques>& b)const{
    
     for(int x=0;x<b.size();x++){
-        b.affiche();
+        b.afficher();
     }
 }
 void AfficheurWinbgi::afficher(Raquette* r)const{
