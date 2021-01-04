@@ -1,15 +1,16 @@
 #include "Briques.h"
-
-Briques::Briques(double xPos, double yPos,int vie=2):
-    _position{Position(xPos,yPos)},
-    _vie{vie}
+#include<iostream>
+Briques::Briques(double xPos, double yPos):
+    _position{Position(xPos,yPos)}
+    //_vie{vie}
 {
+    //std::cout<<"#############"<<std::endl;
 }
 
 
 Briques::~Briques(){}
 bool Briques::BallCollision(Ball*balle){
-
+/*
 	if (_vie > 0){
 
 		double ballTop = balle->position().y() - 10;
@@ -56,11 +57,13 @@ bool Briques::BallCollision(Ball*balle){
 			}
 		}else{return false;}
 	}
+	*/
     return false;
 }
 
 
 int Briques::couleur()const{
+    /*
     switch(_vie) {
       case 3 :
           return GREEN;
@@ -76,9 +79,10 @@ int Briques::couleur()const{
          break;
       default :
           return GREEN;
-   }
+   }*/
+   return GREEN;
 }
-int Briques::vie()const{return _vie;}
+//int Briques::vie()const{return _vie;}
 Position Briques::position()const{return _position;}
 int Briques::largeur()const{
     return LARGEUR_BRIQUE;
@@ -87,6 +91,7 @@ int Briques::hauteur()const{
     return HAUTEUR_BRIQUE;
 }
 void Briques::afficher()const{
+    /*
 	if (_vie > 0){
 		setcolor(couleur());
 		double x1= _position.x() - largeur() / 2 + 1;
@@ -96,5 +101,5 @@ void Briques::afficher()const{
 		rectangle(x1,y1,x2,y2);
 		setfillstyle(SOLID_FILL,couleur());
 		floodfill(x1+2,y1+2,couleur());
-	}
+	}*/
 }

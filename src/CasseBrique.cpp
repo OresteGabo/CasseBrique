@@ -10,14 +10,14 @@ CasseBrique::CasseBrique():
         for (int j = 0; j < 10; j++){
             int posX = RESOLUTION_X_PAR_DEFAUT / 3 + j * 40;//40 represente la largeur des briques
             int posY = 100 + i * 20;//20 represente la hauteur des briques
-            _briques.push_back(Briques(posX, posY,2));
+            _briques.push_back(Briques(posX, posY));
         }
     }
     for (int i = 4; i < 5; i++){
         for (int j = 0; j < 10; j++){
             int posX = RESOLUTION_X_PAR_DEFAUT / 3 + j  * 40;//40 represente la largeur des briques
             int posY = 100 + i * 20;//20 represente la hauteur des briques
-            _briques.push_back(Briques(posX, posY,1));
+            _briques.push_back(Briques(posX, posY));
         }
     }
 
@@ -25,7 +25,7 @@ CasseBrique::CasseBrique():
         for (int j = 0; j < 10; j++){
             int posX = RESOLUTION_X_PAR_DEFAUT / 3 + j * 40;//40 represente la largeur des briques
             int posY = 100 + i * 20;//20 represente la hauteur des briques
-            _briques.push_back(Briques(posX, posY,3));
+            _briques.push_back(Briques(posX, posY));
         }
     }
 }
@@ -61,10 +61,10 @@ void CasseBrique::logique(){
 
 }
 bool CasseBrique::tousLesBriquesCasses()const{
-    for(unsigned int x=0;x<_briques.size();x++){
+    /*for(unsigned int x=0;x<_briques.size();x++){
         if(_briques[x].vie()>0)
             return false;
-    }
+    }*/
     return true;
 }
 bool CasseBrique::balleTJREnJeux()const{
