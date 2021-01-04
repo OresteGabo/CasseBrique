@@ -9,7 +9,8 @@ Briques::Briques(double xPos, double yPos):
 
 
 Briques::~Briques(){}
-bool Briques::BallCollision(Ball*balle){
+
+bool Briques::collision(Ball*balle){
 /*
 	if (_vie > 0){
 
@@ -57,7 +58,7 @@ bool Briques::BallCollision(Ball*balle){
 			}
 		}else{return false;}
 	}
-	*/
+*/
     return false;
 }
 

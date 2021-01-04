@@ -55,7 +55,7 @@ void CasseBrique::logique(){
     // Si la balle touche l'un des briques
     for (int i = 0; i < 5; i++){
         for (int j = 0; j < 15; j++){
-            _briques[i * 15 + j].BallCollision(_balle);
+            _briques[i * 15 + j].collision(_balle);
         }
     }
 

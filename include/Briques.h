@@ -9,22 +9,24 @@ class Briques
 public:
 	Briques(double xPos, double yPos);
 	~Briques();
-	bool BallCollision(Ball*);
+	virtual bool collision(Ball*);
+	virtual void afficher()const;
     int couleur()const;
     int vie()const;
     Position position()const;
     int largeur()const;
     int hauteur()const;
-	virtual void afficher()const;
+
 
 
     double brickTop()const{return _position.y() - HAUTEUR_BRIQUE / 2;}
     double brickBottom()const{return _position.y() + HAUTEUR_BRIQUE / 2;}
     double brickLeft()const{return  _position.x() - LARGEUR_BRIQUE / 2;}
     double brickRight()const{return _position.x() + LARGEUR_BRIQUE / 2;}
-
-private:
+protected:
     Position _position;
+private:
+
 	//int _vie;
     static const int LARGEUR_BRIQUE=40;
     static const int HAUTEUR_BRIQUE=20;

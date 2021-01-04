@@ -106,7 +106,7 @@
 
 1609765061 c:\users\muhir\videos\cassebrique\include\constvariables.h
 
-1609769002 c:\users\muhir\videos\cassebrique\include\briques.h
+1609770683 c:\users\muhir\videos\cassebrique\include\briques.h
 	"Position.h"
 	"Ball.h"
 
@@ -115,13 +115,13 @@
 
 1609765061 source:c:\users\muhir\videos\cassebrique\src\balltest.cpp
 
-1609769002 source:c:\users\muhir\videos\cassebrique\src\briques.cpp
+1609770683 source:c:\users\muhir\videos\cassebrique\src\briques.cpp
 	"Briques.h"
 	<iostream>
 
 1609765061 source:c:\users\muhir\videos\cassebrique\src\briquestest.cpp
 
-1609769019 source:c:\users\muhir\videos\cassebrique\src\cassebrique.cpp
+1609770694 source:c:\users\muhir\videos\cassebrique\src\cassebrique.cpp
 	"CasseBrique.h"
 	<iostream>
 
@@ -283,8 +283,10 @@
 1609759412 c:\users\muhir\videos\cassebrique\include\briquescassables.h
 	"Briques.h"
 
-1609768977 source:c:\users\muhir\videos\cassebrique\src\briquescassable.cpp
+1609770683 source:c:\users\muhir\videos\cassebrique\src\briquescassable.cpp
 	"BriquesCassable.h"
 
-1609768977 c:\users\muhir\videos\cassebrique\include\briquescassable.h
+1609770683 c:\users\muhir\videos\cassebrique\include\briquescassable.h
+	"Position.h"
+	"Ball.h"
 
