@@ -12,7 +12,6 @@ void AfficheurWinbgi::afficher(CasseBrique* _cassebrique)const{
 }
 void AfficheurWinbgi::afficher(Ball* b)const{
 
-    Ball* b=_cassebrique->balle();
     setcolor(LIGHTCYAN);
 	circle(b->position().x(),b->position().y(),b->rayon());
     setfillstyle(SOLID_FILL,LIGHTCYAN);
