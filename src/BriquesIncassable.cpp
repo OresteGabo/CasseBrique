@@ -10,18 +10,7 @@ BriquesIncassable::~BriquesIncassable()
 {
     //dtor
 }
-void BriquesIncassable::afficher(int couleur,int style)const{
-    if (couleur!= 0){
-		setcolor(couleur);
-		double x1= _position.x() - largeur() / 2 + 1;
-		double y1= _position.y() - hauteur() / 2 + 1;
-		double x2= _position.x() + largeur() / 2 - 1;
-		double y2= _position.y() + hauteur() / 2 - 1;
-		rectangle(x1,y1,x2,y2);
-		setfillstyle(style,couleur);
-		floodfill(x1+2,y1+2,couleur);
-	}
-}
+
 bool BriquesIncassable::vivant()const{
     return true;
 }

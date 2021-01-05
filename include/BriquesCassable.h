@@ -9,7 +9,6 @@ class BriquesCassable:public Briques
         BriquesCassable(double,double,int);
         /** Default destructor */
         virtual ~BriquesCassable();
-        virtual void afficher(int couleur,int style)const override;
         virtual bool vivant()const override;
         virtual double solidite()const override;
         virtual int couleur()const override;

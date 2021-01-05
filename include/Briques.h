@@ -11,7 +11,7 @@ class Briques
         Briques(double,double);
         /** Default destructor */
         virtual ~Briques();
-        virtual void afficher(int couleur,int style)const=0;
+
         virtual bool vivant()const=0;
         virtual double solidite()const =0;
         virtual int couleur()const=0;

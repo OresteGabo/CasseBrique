@@ -115,7 +115,7 @@ void Application::executer(){
 
             // logique du jeux
             _cassebrique->logique();
-            std::cout<<"Say hi gdebugger"<<std::endl;
+
 
             if(_cassebrique->tousLesBriquesCasses()){
                 cleardevice();
@@ -140,7 +140,16 @@ void Application::afficher(const Balle& b)const{
 }
 void Application::afficher(const vector<Briques*> br)const{
     for(unsigned int x=0;x<br.size();x++){
-        br[x]->afficher(br[x]->couleur(),br[x]->style());
+        if(br[x]->vivant()){
+            setcolor(br[x]->couleur());
+            double x1= br[x]->position().x() - br[x]->largeur() / 2 + 1;
+            double y1= br[x]->position().y() - br[x]->hauteur() / 2 + 1;
+            double x2= br[x]->position().x() + br[x]->largeur() / 2 - 1;
+            double y2= br[x]->position().y() + br[x]->hauteur() / 2 - 1;
+            rectangle(x1,y1,x2,y2);
+            setfillstyle(br[x]->style(),br[x]->couleur());
+            floodfill(x1+2,y1+2,br[x]->couleur());
+        }
     }
 }
 void Application::afficher(const Raquette &r)const{

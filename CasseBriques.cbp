@@ -55,6 +55,12 @@
 		<Unit filename="src/Cercle.cpp" />
 		<Unit filename="src/Position.cpp" />
 		<Unit filename="src/Raquette.cpp" />
+		<Unit filename="tests/BalleT.cpp" />
+		<Unit filename="tests/BriqueT.cpp" />
+		<Unit filename="tests/CercleT.cpp" />
+		<Unit filename="tests/PositionT.cpp" />
+		<Unit filename="tests/RaquetteT.cpp" />
+		<Unit filename="tests/doctest.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
