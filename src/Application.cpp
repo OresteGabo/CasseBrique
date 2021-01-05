@@ -1,44 +1,17 @@
 #include "Application.h"
-#include"AfficheurWinbgi.h"
 
 Application::Application():
-    _cassebrique{CasseBrique()},
-    _raquette{Raquette(RESOLUTION_Y_PAR_DEFAUT-10)},
+    _cassebrique{new CasseBrique()},
+    _raquette{new Raquette(600-10)},
     _resolutionX{800},
     _resolutionY{600}
 {
     afficheMenu();
 }
-
 Application::~Application()
-{}
-
-void Application::executer(){
-    AfficheurWinbgi afficheur=AfficheurWinbgi();
-    bool running = true,quit=false;
-    while(!quit){
-        if(running){
-            initwindow( _resolutionX , _resolutionY , "WinBGIm Demo" );
-        }
-        while (running){
-            cleardevice();
-            mvtRaquette();
-
-            // logique du jeux
-            _cassebrique.logique();
-            afficheur.afficher(&_cassebrique);
-            if(_cassebrique.tousLesBriquesCasses()){
-                cleardevice();
-                cout<<"## FELICITATION VOUS AVEZ GAGNE##"<<endl;
-                afficheMenu();
-            }
-            if(!_cassebrique.balleTJREnJeux()){
-                cleardevice();
-                cout<<"## FELICITATION VOUS AVEZ PERDU##"<<endl;
-                afficheMenu();
-            }
-        }
-    }
+{
+    delete _cassebrique;
+    delete _raquette;
 }
 
 int Application::resolutionX()const{
@@ -54,7 +27,14 @@ void Application::resolutionX(int x){
 void Application::resolutionY(int y){
     _resolutionY=y;
 }
-
+void Application::mvtRaquette(){
+    POINT cursorPosition;
+    GetCursorPos(&cursorPosition);
+    double x=double(cursorPosition.x);
+    if(x<_resolutionX && x>0){
+        _raquette->repositionnerX(x);
+    }
+}
 void Application::afficheMenu(){
     cout<<"_____JEUX CASSEBRIQUES____"<<endl;
     cout<<"1. Lancer le jeux"<<endl;
@@ -87,7 +67,7 @@ void Application::afficherParametres(){
         afficheMenu();
     }
 }
-void Application::afficheBalle(){
+void Application::afficheMenuBalle(){
     cout<<"_____LA BELLE DU JEUX____"<<endl;
     cout<<"1. Changer la taille"<<endl;
     cout<<"2. Changer la couleur"<<endl;
@@ -103,7 +83,7 @@ void Application::afficheBalle(){
         afficheMenu();
     }
 }
-void Application::afficheBrique(){
+void Application::afficheMenuBrique(){
     cout<<"_____LES BRIQUES DU JEUX____"<<endl;
     cout<<"1. Changer les couleur"<<endl;
     cout<<"2. Changer les vies des briques"<<endl;
@@ -119,11 +99,59 @@ void Application::afficheBrique(){
         afficheMenu();
     }
 }
-void Application::mvtRaquette(){
-    POINT cursorPosition;
-    GetCursorPos(&cursorPosition);
-    double x=double(cursorPosition.x);
-    if(x<_resolutionX && x>0){
-        _raquette.repositionnerX(x);
+
+
+void Application::executer(){
+    bool running = true,quit=false;
+
+    while(!quit){
+        if(running){
+            initwindow( _resolutionX , _resolutionY , "WinBGIm Demo" );
+        }
+        while (running){
+            cleardevice();
+            afficher();
+            mvtRaquette();
+
+            // logique du jeux
+            _cassebrique->logique();
+            std::cout<<"Say hi gdebugger"<<std::endl;
+
+            if(_cassebrique->tousLesBriquesCasses()){
+                cleardevice();
+                cout<<"## FELICITATION VOUS AVEZ GAGNE##"<<endl;
+                afficheMenu();
+            }
+            if(!_cassebrique->balleTJREnJeux()){
+                cleardevice();
+                cout<<"## FELICITATION VOUS AVEZ PERDU##"<<endl;
+                afficheMenu();
+            }
+        }
+        std::cout<<"Hello gdebugger"<<std::endl;
+        int x;cin>>x;
     }
+}
+void Application::afficher(const Balle& b)const{
+    setcolor(LIGHTCYAN);
+	circle(b.position().x(),b.position().y(),b.rayon());
+    setfillstyle(SOLID_FILL,LIGHTCYAN);
+	floodfill(b.position().x(),b.position().y(),LIGHTCYAN);
+}
+void Application::afficher(const vector<Briques*> br)const{
+    for(unsigned int x=0;x<br.size();x++){
+        br[x]->afficher(br[x]->couleur(),br[x]->style());
+    }
+}
+void Application::afficher(const Raquette &r)const{
+    double x1= r.position().x() - r.largeur() / 2;
+    double y1= r.position().y() - 5;
+    double x2= r.position().x() + r.largeur() / 2;
+    double y2= r.position().y() + 5;
+    rectangle(x1,y1,x2,y2);
+}
+void Application::afficher()const{
+    afficher(_cassebrique->balle());
+    afficher(_cassebrique->raquette());
+    afficher(_cassebrique->briques());
 }

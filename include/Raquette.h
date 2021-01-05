@@ -1,7 +1,6 @@
 #pragma once
 #ifndef RAQUETTE_H
 #define RAQUETTE_H
-#include"CasseBrique.h"
 #include<graphics.h>
 #include "Position.h"
 
@@ -18,9 +17,10 @@ public:
 
 
 private:
+    int _largeur= 100;
+    int _hauteur=10;
     Position _position;
-    static const int LARGEUR_RAQUETTE_PAR_DEFAUT= 100;
-    static const int HAUTEUR_RAQUETTE_PAR_DEFAUT=10;
+
 };
 
 

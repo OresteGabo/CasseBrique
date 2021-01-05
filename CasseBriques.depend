@@ -1,0 +1,92 @@
+# depslib dependency file v1.0
+1609806163 source:c:\users\muhir\documents\cassebriques\main.cpp
+	<iostream>
+	"Application.h"
+
+1609808033 source:c:\users\muhir\documents\cassebriques\src\briquesincassable.cpp
+	"BriquesIncassable.h"
+
+1609808033 c:\users\muhir\documents\cassebriques\include\briquesincassable.h
+	<Briques.h>
+
+1609808033 c:\users\muhir\documents\cassebriques\include\briques.h
+	"Position.h"
+	"Balle.h"
+	<graphics.h>
+
+1609791925 source:c:\users\muhir\documents\cassebriques\src\briquesincassables.cpp
+	"BriquesIncassables.h"
+
+1609791925 c:\users\muhir\documents\cassebriques\include\briquesincassables.h
+
+1609792116 source:c:\users\muhir\documents\cassebriques\src\position.cpp
+	"Position.h"
+
+1609792116 c:\users\muhir\documents\cassebriques\include\position.h
+	<cmath>
+
+1609796681 source:c:\users\muhir\documents\cassebriques\src\briques.cpp
+	"Briques.h"
+
+1609808033 source:c:\users\muhir\documents\cassebriques\src\briquescassable.cpp
+	"BriquesCassable.h"
+
+1609808033 c:\users\muhir\documents\cassebriques\include\briquescassable.h
+	"Briques.h"
+
+1609808033 source:c:\users\muhir\documents\cassebriques\src\briquessansrobond.cpp
+	"BriquesSansRobond.h"
+
+1609808033 c:\users\muhir\documents\cassebriques\include\briquessansrobond.h
+	"BriquesCassable.h"
+
+1609793458 source:c:\users\muhir\documents\cassebriques\src\cercle.cpp
+	"Cercle.h"
+
+1609793458 c:\users\muhir\documents\cassebriques\include\cercle.h
+	<cmath>
+	<iostream>
+	"Position.h"
+
+1609797781 source:c:\users\muhir\documents\cassebriques\src\balle.cpp
+	"Balle.h"
+
+1609801509 c:\users\muhir\documents\cassebriques\include\balle.h
+	"Position.h"
+	<ctime>
+	<graphics.h>
+	"Raquette.h"
+	"Cercle.h"
+	"Briques.h"
+
+1609794825 source:c:\users\muhir\documents\cassebriques\src\raquette.cpp
+	"Raquette.h"
+
+1609794872 c:\users\muhir\documents\cassebriques\include\raquette.h
+	<graphics.h>
+	"Position.h"
+
+1609809861 source:c:\users\muhir\documents\cassebriques\src\cassebrique.cpp
+	"CasseBrique.h"
+	<iostream>
+
+1609807177 c:\users\muhir\documents\cassebriques\include\cassebrique.h
+	<memory>
+	"Balle.h"
+	"Raquette.h"
+	"Briques.h"
+	"BriquesIncassable.h"
+	"BriquesSansRobond.h"
+	"BriquesCassable.h"
+	<vector>
+
+1609810076 source:c:\users\muhir\documents\cassebriques\src\application.cpp
+	"Application.h"
+
+1609808761 c:\users\muhir\documents\cassebriques\include\application.h
+	"CasseBrique.h"
+	<chrono>
+	<iostream>
+	<memory>
+	<iostream>
+

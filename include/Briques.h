@@ -1,37 +1,43 @@
-#pragma once
 #ifndef BRIQUES_H
 #define BRIQUES_H
-#include "Position.h"
-#include "Ball.h"
-class Ball;
+#include"Position.h"
+#include"Balle.h"
+#include <graphics.h>
+class Balle;
 class Briques
 {
-public:
-	Briques(double xPos, double yPos);
-	~Briques();
-	virtual bool collision(Ball*);
-	virtual void afficher()const;
-    int couleur()const;
-    int vie()const;
-    Position position()const;
-    int largeur()const;
-    int hauteur()const;
+    public:
+        /** Default constructor */
+        Briques(double,double);
+        /** Default destructor */
+        virtual ~Briques();
+        virtual void afficher(int couleur,int style)const=0;
+        virtual bool vivant()const=0;
+        virtual double solidite()const =0;
+        virtual int couleur()const=0;
+        virtual int style()const=0;
+        virtual bool collision(Balle&)=0;
+
+
+        Position position()const;
+        void position(const Position&);
+        int largeur()const;
+        int hauteur()const;
+        void largeur(int);
+        void hauteur(int);
 
 
 
-    double brickTop()const{return _position.y() - HAUTEUR_BRIQUE / 2;}
-    double brickBottom()const{return _position.y() + HAUTEUR_BRIQUE / 2;}
-    double brickLeft()const{return  _position.x() - LARGEUR_BRIQUE / 2;}
-    double brickRight()const{return _position.x() + LARGEUR_BRIQUE / 2;}
-protected:
-    Position _position;
-private:
+    protected:
+        double brickTop()const{return _position.y() - _hauteur / 2;}
+        double brickBottom()const{return _position.y() + _hauteur / 2;}
+        double brickLeft()const{return  _position.x() - _largeur / 2;}
+        double brickRight()const{return _position.x() + _largeur / 2;}
+        Position _position;
+    private:
+        int _largeur=40;
+        int _hauteur=20;
 
-	//int _vie;
-    static const int LARGEUR_BRIQUE=40;
-    static const int HAUTEUR_BRIQUE=20;
 };
-
-
 
 #endif // BRIQUES_H

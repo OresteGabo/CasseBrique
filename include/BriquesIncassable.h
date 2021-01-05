@@ -1,14 +1,16 @@
-#ifndef BRIQUESINCASSABLES_H
-#define BRIQUESINCASSABLES_H
-#include"Briques.h"
+#ifndef BRIQUESINCASSABLE_H
+#define BRIQUESINCASSABLE_H
 
-class BriquesCassable:public Briques
+#include <Briques.h>
+
+
+class BriquesIncassable : public Briques
 {
     public:
         /** Default constructor */
-        BriquesCassable(double,double,int);
+        BriquesIncassable(double,double);
         /** Default destructor */
-        virtual ~BriquesCassable();
+        virtual ~BriquesIncassable();
         virtual void afficher(int couleur,int style)const override;
         virtual bool vivant()const override;
         virtual double solidite()const override;
@@ -17,9 +19,8 @@ class BriquesCassable:public Briques
         virtual bool collision(Balle&)override;
 
     protected:
-        int _vie;
-    private:
 
+    private:
 };
 
-#endif // BRIQUESINCASSABLES_H
+#endif // BRIQUESINCASSABLE_H

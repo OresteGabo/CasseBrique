@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="CasseBrique" />
+		<Option title="CasseBriques" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/CasseBrique" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/CasseBriques" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -17,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/CasseBrique" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/CasseBriques" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -34,33 +34,27 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="ApplicationTest.cpp" />
-		<Unit filename="CasseBriqueTest.cpp" />
-		<Unit filename="doctest.h" />
-		<Unit filename="include/AfficheurWinbgi.h" />
 		<Unit filename="include/Application.h" />
-		<Unit filename="include/Ball.h" />
+		<Unit filename="include/Balle.h" />
 		<Unit filename="include/Briques.h" />
 		<Unit filename="include/BriquesCassable.h" />
+		<Unit filename="include/BriquesIncassable.h" />
+		<Unit filename="include/BriquesSansRobond.h" />
 		<Unit filename="include/CasseBrique.h" />
 		<Unit filename="include/Cercle.h" />
 		<Unit filename="include/Position.h" />
 		<Unit filename="include/Raquette.h" />
-		<Unit filename="include/constVariables.h" />
-		<Unit filename="src/AfficheurWinbgi.cpp" />
+		<Unit filename="main.cpp" />
 		<Unit filename="src/Application.cpp" />
-		<Unit filename="src/Ball.cpp" />
-		<Unit filename="src/BallTest.cpp" />
+		<Unit filename="src/Balle.cpp" />
 		<Unit filename="src/Briques.cpp" />
 		<Unit filename="src/BriquesCassable.cpp" />
-		<Unit filename="src/BriquesTest.cpp" />
+		<Unit filename="src/BriquesIncassable.cpp" />
+		<Unit filename="src/BriquesSansRobond.cpp" />
 		<Unit filename="src/CasseBrique.cpp" />
 		<Unit filename="src/Cercle.cpp" />
 		<Unit filename="src/Position.cpp" />
-		<Unit filename="src/PositionTest.cpp" />
 		<Unit filename="src/Raquette.cpp" />
-		<Unit filename="src/RaquetteTest.cpp" />
-		<Unit filename="testmain.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

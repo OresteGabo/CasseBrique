@@ -6,9 +6,7 @@
 #include"Position.h"
 class Cercle{
     public:
-        /** Default constructor */
         Cercle(double,const Position&);
-        /** Default destructor */
         virtual ~Cercle();
         double rayon()const;
         double surface()const;

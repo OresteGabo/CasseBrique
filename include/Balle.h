@@ -1,19 +1,20 @@
 #pragma once
-#ifndef BALL_H
-#define BALL_H
+#ifndef BALLE_H
+#define BALLE_H
 #include"Position.h"
 #include <ctime>
 #include<graphics.h>
 #include "Raquette.h"
-#include "CasseBrique.h"
-#include"constVariables.h"
+//#include "CasseBrique.h"
+//#include"constVariables.h"
 #include"Cercle.h"
 #include"Briques.h"
-class Raquette;
-class Ball:public Cercle{
+//class Raquette;
+class Briques;
+class Balle:public Cercle{
 public:
-	Ball(double);
-	~Ball();
+	Balle(double);
+	~Balle();
 
 	void avancer();
 	void collision(const Raquette&r);
@@ -25,11 +26,11 @@ public:
 	inline int rayon()const{return _rayon;}
 	void vitesse(double);
 	double vitesse()const;
-	void ajusterVitesse(int);
+	void ajusterVitesse(const Briques& br);
 
 private:
 	Position _direction;
 	double _vitesse;
 };
 
-#endif // BALL_H
+#endif // BALLE_H

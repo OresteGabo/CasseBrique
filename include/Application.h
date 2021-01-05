@@ -4,7 +4,12 @@
 #include "CasseBrique.h"
 #include<chrono>
 #include<iostream>
+#include<memory>
+#include<iostream>
 using namespace std;
+using std::vector;
+using std::unique_ptr;
+using std::make_unique;
 class Application
 {
     public:
@@ -23,12 +28,17 @@ class Application
 
     private:
         void afficherParametres();
-        void afficheBrique();
-        void afficheBalle();
+        void afficheMenuBrique();
+        void afficheMenuBalle();
         void afficheMenu();
 
-        CasseBrique _cassebrique;
-        Raquette _raquette;
+        void afficher(const Balle&)const;
+        void afficher(const vector<Briques*> br)const;
+        void afficher(const Raquette&)const;
+        void afficher()const;
+
+        CasseBrique* _cassebrique;
+        Raquette* _raquette;
         double _tempsExec;
         int _resolutionX,_resolutionY;
 };

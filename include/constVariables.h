@@ -1,3 +1,0 @@
-const int RESOLUTION_X_PAR_DEFAUT= 800;
-const int RESOLUTION_Y_PAR_DEFAUT= 600;
-

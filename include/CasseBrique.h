@@ -2,14 +2,18 @@
 #ifndef CASSEBRIQUE_H
 #define CASSEBRIQUE_H
 #include<memory>
-#include "Ball.h"
+#include "Balle.h"
 #include "Raquette.h"
 #include "Briques.h"
+#include "BriquesIncassable.h"
+#include "BriquesSansRobond.h"
+#include "BriquesCassable.h"
 #include<vector>
 using std::vector;
 using std::unique_ptr;
+using namespace std;
 class Briques;
-class Ball;
+class Balle;
 class Raquette;
 class CasseBrique
 {
@@ -20,16 +24,17 @@ public:
 	double positionSourie()const;
 	void logique();
 
-    Ball* balle()const;
-    Raquette* raquette()const;
-    vector<Briques> briques()const;
+    const Balle& balle()const;
+    const Raquette& raquette()const;
+    vector<Briques*> briques()const;
     bool tousLesBriquesCasses()const;
     bool balleTJREnJeux()const;
 
 private:
-	Ball* _balle;
-	Raquette* _raquette;
-	vector<Briques> _briques;
+	Balle _balle;
+	Raquette _raquette;
+	vector<Briques*> _briques;
+	void detruireBriques();
 };
 
 
