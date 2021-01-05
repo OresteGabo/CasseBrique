@@ -31,6 +31,7 @@ class Application
         void afficheMenuBrique();
         void afficheMenuBalle();
         void afficheMenu();
+        void finirLeJeux();
 
         void afficher(const Balle&)const;
         void afficher(const vector<Briques*> br)const;

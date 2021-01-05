@@ -8,12 +8,14 @@ Application::Application():
 {
     afficheMenu();
 }
+
 Application::~Application()
 {
+    cout<<"DESTRUCTOR"<<endl;
     delete _cassebrique;
     delete _raquette;
 }
-
+//balleTJREnJeux()
 int Application::resolutionX()const{
     return _resolutionX;
 }
@@ -36,9 +38,11 @@ void Application::mvtRaquette(){
     }
 }
 void Application::afficheMenu(){
-    cout<<"_____JEUX CASSEBRIQUES____"<<endl;
-    cout<<"1. Lancer le jeux"<<endl;
-    cout<<"2. Parametres"<<endl;
+    /*
+    cout<<"     _____JEUX CASSEBRIQUES____"<<endl;
+    cout<<"     1. Lancer le jeux"<<endl;
+    cout<<"     2. Parametres"<<endl;
+    cout<<"     3. Quitter"<<endl;
 
     int input;
     cin>>input;
@@ -46,9 +50,30 @@ void Application::afficheMenu(){
         executer();
     }else if(input==2){
         afficherParametres();
-    }else{
-        afficheMenu();
+    }else if(input ==3 ){
+        finirLeJeux();
     }
+    */
+    bool jeuxEnCours=true;
+    while(jeuxEnCours){
+        cout<<"     _____JEUX CASSEBRIQUES____"<<endl;
+        cout<<"     1. Lancer le jeux"<<endl;
+        cout<<"     2. Parametres"<<endl;
+        cout<<"     3. Quitter"<<endl;
+
+        int input;
+        cin>>input;
+        if(input==1){
+            executer();
+        }else if(input==2){
+            afficherParametres();
+        }else if(input ==3 ){
+            finirLeJeux();
+            jeuxEnCours=false;
+        }
+    }
+
+
 }
 void Application::afficherParametres(){
     cout<<"_____LES PARAMETRES____"<<endl;
@@ -64,11 +89,11 @@ void Application::afficherParametres(){
     }else if(input==2){
         afficherParametres();
     }else{
-        afficheMenu();
+
     }
 }
 void Application::afficheMenuBalle(){
-    cout<<"_____LA BELLE DU JEUX____"<<endl;
+    /*cout<<"_____LA BELLE DU JEUX____"<<endl;
     cout<<"1. Changer la taille"<<endl;
     cout<<"2. Changer la couleur"<<endl;
     cout<<"3. Menu principale"<<endl<<endl<<endl<<endl;
@@ -81,10 +106,10 @@ void Application::afficheMenuBalle(){
         afficherParametres();
     }else{
         afficheMenu();
-    }
+    }*/
 }
 void Application::afficheMenuBrique(){
-    cout<<"_____LES BRIQUES DU JEUX____"<<endl;
+    /*cout<<"_____LES BRIQUES DU JEUX____"<<endl;
     cout<<"1. Changer les couleur"<<endl;
     cout<<"2. Changer les vies des briques"<<endl;
     cout<<"3. Menu principale"<<endl<<endl<<endl<<endl;
@@ -97,7 +122,8 @@ void Application::afficheMenuBrique(){
         afficherParametres();
     }else{
         afficheMenu();
-    }
+    }*/
+
 }
 
 
@@ -124,7 +150,9 @@ void Application::executer(){
             }
             if(!_cassebrique->balleTJREnJeux()){
                 cleardevice();
-                cout<<"## FELICITATION VOUS AVEZ PERDU##"<<endl;
+                closegraph();
+                system("cls");
+                cout<<endl<<endl<<endl<<"           ## VOUS AVEZ PERDU##\n\n"<<endl;
                 afficheMenu();
             }
         }
@@ -163,4 +191,11 @@ void Application::afficher()const{
     afficher(_cassebrique->balle());
     afficher(_cassebrique->raquette());
     afficher(_cassebrique->briques());
+}
+void Application::finirLeJeux(){
+    system("cls");
+    cout<<" MERCI D'AVOIR JOUER NOTRE JEUX "<<endl;
+    cout<<"les sources codes sont disponible sur :"<<endl<<endl;
+    cout<<"         https://github.com/OresteGabo/CasseBrique"<<endl;
+    cout<<endl<<endl<<"         ________FIN________     "<<endl;
 }

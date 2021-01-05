@@ -21,7 +21,6 @@ void Balle::avancer(){
 	if (_position.y() < 10)
 		_direction.y( abs(_direction.y()));
     if(_position.y() > 600/*RESOLUTION_Y_PAR_DEFAUT*/ ){
-        _position.y(_position.y()-20);
         _direction.xy(0,0);
     }
 }

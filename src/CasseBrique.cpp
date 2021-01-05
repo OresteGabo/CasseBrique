@@ -2,7 +2,7 @@
 #include<iostream>
 CasseBrique::CasseBrique():
     _balle{Balle(10)},
-    _raquette{Raquette(600 - 5)}
+    _raquette{Raquette(/*600 - 5*/0)}
 {
 
     for (int i = 2; i <4; i++){
