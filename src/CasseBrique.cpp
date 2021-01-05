@@ -5,21 +5,23 @@ CasseBrique::CasseBrique():
     _raquette{Raquette(600 - 5)}
 {
 
-    /*for (int i = 2; i <4; i++){
+    for (int i = 2; i <4; i++){
         for (int j = 0; j < 10; j++){
             int posX = 800 / 3 + j * 40;//40 represente la largeur des briques
             int posY = 100 + i * 20;//20 represente la hauteur des briques
             _briques.push_back(new BriquesCassable(posX, posY,2));
+            j++;
         }
     }
 
     for (int i = 4; i < 5; i++){
         for (int j = 0; j < 10; j++){
+            j++;
             int posX = 800 / 3 + j  * 40;//40 represente la largeur des briques
             int posY = 100 + i * 20;//20 represente la hauteur des briques
             _briques.push_back(new BriquesCassable(posX, posY,1));
         }
-    }*/
+    }
 
     for (int i = 0; i < 1; i++){
         for (int j = 0; j < 10; j++){
@@ -39,9 +41,9 @@ CasseBrique::CasseBrique():
 
 
 
-            _briques.push_back(new BriquesSansRobond(50, 5,1));
-            _briques.push_back(new BriquesSansRobond(150, 5,1));
-            _briques.push_back(new BriquesSansRobond(250, 5,1));
+            _briques.push_back(new BriquesSansRobond(50, 50,1));
+            _briques.push_back(new BriquesSansRobond(150, 50,1));
+            _briques.push_back(new BriquesSansRobond(250, 50,1));
 
 
 }

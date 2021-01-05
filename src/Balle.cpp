@@ -32,7 +32,7 @@ void Balle::ajusterVitesse(const Briques& br){
 }
 void Balle::collision(const Raquette&r){
     //detecter la collision avec la raquette, et faire le rebond
-	if (_position.y() > 600 - 20 && _direction.y() > 0){
+	if (_position.y() > 600 - ((diametre())+r.hauteur()) && _direction.y() > 0){
 		if (_position.x() > r.position().x() - r.largeur() / 2 &&
             _position.x() < r.position().x() + r.largeur()/2 ){
 			_direction.y( -_direction.y());

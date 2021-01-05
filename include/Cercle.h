@@ -12,6 +12,7 @@ class Cercle{
         double surface()const;
         Position position()const;
         void rayon(double val);
+        double diametre()const;
 
     protected:
         double _rayon;

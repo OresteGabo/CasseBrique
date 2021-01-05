@@ -13,3 +13,4 @@ double Cercle::rayon()const{
 void Cercle::rayon(double val){
     _rayon=val;
 }
+double Cercle::diametre()const{return 2*_rayon;}
