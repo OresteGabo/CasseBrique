@@ -2,7 +2,7 @@
 Balle::Balle(double r):
     Cercle{r,Position(800/2,600-20)},
     _direction{rand()%300,-300},
-    _vitesse{0.006}
+    _vitesse{0.001}
 {
     _direction.x(100);
 }

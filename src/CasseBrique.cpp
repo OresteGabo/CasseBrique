@@ -16,10 +16,10 @@ CasseBrique::CasseBrique():
 
     for (int i = 4; i < 5; i++){
         for (int j = 0; j < 10; j++){
-            j++;
+            //j++;
             int posX = 800 / 3 + j  * 40;//40 represente la largeur des briques
             int posY = 100 + i * 20;//20 represente la hauteur des briques
-            _briques.push_back(new BriquesCassable(posX, posY,1));
+            _briques.push_back(new BriquesCassable(posX, posY,3));
         }
     }
 
@@ -30,20 +30,22 @@ CasseBrique::CasseBrique():
             _briques.push_back(new BriquesCassable(posX, posY,3));
         }
     }
+
     for (int i = 7; i < 8; i++){
         for (int j = 0; j < 10; j+=2){
 
             int posX = 800 / 3 + j * 40;//40 represente la largeur des briques
             int posY = 100 + i * 20;//20 represente la hauteur des briques
             _briques.push_back(new BriquesIncassable(posX, posY));
+            //j++;j++;
         }
     }
 
 
 
             _briques.push_back(new BriquesSansRobond(50, 50,1));
-            _briques.push_back(new BriquesSansRobond(150, 50,1));
-            _briques.push_back(new BriquesSansRobond(250, 50,1));
+            _briques.push_back(new BriquesSansRobond(150, 50,3));
+            _briques.push_back(new BriquesSansRobond(250, 50,3));
 
 
 }

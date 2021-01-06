@@ -138,6 +138,11 @@ void Application::executer(){
             cleardevice();
             afficher();
             mvtRaquette();
+            cout<<"Pour prendre des capture"<<endl;
+            if(_cassebrique->balle().position().y()<500){
+                int x;
+                cin>>x;
+            }
 
             // logique du jeux
             _cassebrique->logique();
