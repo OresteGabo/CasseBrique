@@ -17,8 +17,8 @@ public:
 
 
 private:
-    int _largeur= 100;
-    int _hauteur=10;
+    int _largeur;
+    int _hauteur;
     Position _position;
 
 };
