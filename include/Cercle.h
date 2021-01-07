@@ -14,6 +14,11 @@ class Cercle{
         void rayon(double val);
         double diametre()const;
 
+        double topY()const;
+        double bottomY()const;
+        double leftX()const;
+        double rightX()const;
+
     protected:
         double _rayon;
         Position _position;

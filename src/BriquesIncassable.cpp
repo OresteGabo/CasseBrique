@@ -26,17 +26,17 @@ int BriquesIncassable::style()const{
 }
 bool BriquesIncassable::collision(Balle& balle){
 
-    double ballTop = balle.position().y() - 10;
-    double ballBottom = balle.position().y() + 10;
-    double ballLeft = balle.position().x() - 10;
-    double ballRight = balle.position().x() + 10;
-
     // If it's a collision
-    if (ballTop < brickBottom() && ballBottom > brickTop() && ballRight > brickLeft() && ballLeft < brickRight()){
-        double distanceX1 = abs(ballRight - brickLeft());
-        double distanceX2 = abs(ballLeft - brickRight());
-        double distanceY1 = abs(ballTop - brickBottom());
-        double distanceY2 = abs(ballBottom - brickTop());
+    if (balle.topY() < bottomY() && balle.bottomY() > topY() && balle.rightX() > leftX() && balle.leftX() < rightX()){
+        double distanceX1 = abs(balle.rightX() - leftX());
+        double distanceX2 = abs(balle.leftX() - rightX());
+        double distanceY1 = abs(balle.topY() - bottomY());
+        double distanceY2 = abs(balle.bottomY() - topY());
+        if(distanceX1!=distanceX2){
+            std::cout<<"not equal"<<std::endl;
+        }else{
+            std::cout<<"not equal"<<std::endl;
+        }
 
         // bas
         if (balle.direction().y() < 0 && distanceY1 < distanceY2 && distanceY1 < distanceX1 && distanceY1 < distanceX2){

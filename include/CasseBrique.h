@@ -18,7 +18,7 @@ class Raquette;
 class CasseBrique
 {
 public:
-	CasseBrique();
+	CasseBrique(int resolutionX,int resolutionY);
 	~CasseBrique();
 
 	double positionSourie()const;
@@ -29,12 +29,26 @@ public:
     vector<Briques*> briques()const;
     bool tousLesBriquesCasses()const;
     bool balleTJREnJeux()const;
+    void avancer();
+    void initialiser();
+    void decharger();
+    void charger(int c=1);
 
 private:
 	Balle _balle;
 	Raquette _raquette;
 	vector<Briques*> _briques;
 	void detruireBriques();
+	int _resolutionX;
+	int _resolutionY;
+
+	void charger1();
+	void charger2();
+	void charger3();
+	void charger4();
+	void charger5();
+
+
 };
 
 

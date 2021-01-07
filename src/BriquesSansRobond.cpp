@@ -16,14 +16,8 @@ int BriquesSansRobond::style()const{
 }
 bool BriquesSansRobond::collision(Balle& balle){
     if (_vie > 0){
-
-        double ballTop = balle.position().y() - 10;
-        double ballBottom = balle.position().y() + 10;
-        double ballLeft = balle.position().x() - 10;
-        double ballRight = balle.position().x() + 10;
-
         // If it's a collision
-        if (ballTop < brickBottom() && ballBottom > brickTop() && ballRight > brickLeft() && ballLeft < brickRight()){
+        if (balle.topY() < bottomY() && balle.bottomY() > topY() && balle.rightX() > leftX() && balle.leftX() < rightX()){
             balle.direction(Position(-1*balle.direction().x(),-1*balle.direction().y()));
             balle.ajusterVitesse(*this);
             _vie --;

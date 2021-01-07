@@ -29,10 +29,10 @@ class Briques
 
 
     protected:
-        double brickTop()const{return _position.y() - _hauteur / 2;}
-        double brickBottom()const{return _position.y() + _hauteur / 2;}
-        double brickLeft()const{return  _position.x() - _largeur / 2;}
-        double brickRight()const{return _position.x() + _largeur / 2;}
+        double topY()const{return _position.y() - _hauteur / 2;}
+        double bottomY()const{return _position.y() + _hauteur / 2;}
+        double leftX()const{return  _position.x() - _largeur / 2;}
+        double rightX()const{return _position.x() + _largeur / 2;}
         Position _position;
     private:
         int _largeur=40;

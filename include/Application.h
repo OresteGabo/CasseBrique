@@ -13,11 +13,9 @@ using std::make_unique;
 class Application
 {
     public:
-        Application();
+        Application(int ,int);
         virtual ~Application();
         void executer();
-        long initialiser();
-        void mvtRaquette();
         int resolutionX()const;
         int resolutionY()const;
 
@@ -28,8 +26,8 @@ class Application
 
     private:
         void afficherParametres();
-        void afficheMenuBrique();
-        void afficheMenuBalle();
+        void chargerAutreBrique();
+        void changerCouleurBalle();
         void afficheMenu();
         void finirLeJeux();
 
@@ -39,7 +37,6 @@ class Application
         void afficher()const;
 
         CasseBrique* _cassebrique;
-        Raquette* _raquette;
         double _tempsExec;
         int _resolutionX,_resolutionY;
 };

@@ -19,6 +19,7 @@ class BriquesCassable:public Briques
         int _vie;
     private:
 
+
 };
 
 #endif // BRIQUESINCASSABLES_H

@@ -1,21 +1,17 @@
 #include "Application.h"
 
-Application::Application():
-    _cassebrique{new CasseBrique()},
-    _raquette{new Raquette(600-10)},
-    _resolutionX{800},
-    _resolutionY{600}
+Application::Application(int resolutionX,int resolutionY):
+    _resolutionX{resolutionX},
+    _resolutionY{resolutionY},
+    _cassebrique{new CasseBrique(_resolutionX,_resolutionY)}
 {
     afficheMenu();
 }
 
 Application::~Application()
 {
-    cout<<"DESTRUCTOR"<<endl;
-    delete _cassebrique;
-    delete _raquette;
+    finirLeJeux();
 }
-//balleTJREnJeux()
 int Application::resolutionX()const{
     return _resolutionX;
 }
@@ -29,142 +25,74 @@ void Application::resolutionX(int x){
 void Application::resolutionY(int y){
     _resolutionY=y;
 }
-void Application::mvtRaquette(){
-    POINT cursorPosition;
-    GetCursorPos(&cursorPosition);
-    double x=double(cursorPosition.x);
-    if(x<_resolutionX && x>0){
-        _raquette->repositionnerX(x);
-    }
-}
-void Application::afficheMenu(){
-    /*
-    cout<<"     _____JEUX CASSEBRIQUES____"<<endl;
-    cout<<"     1. Lancer le jeux"<<endl;
-    cout<<"     2. Parametres"<<endl;
-    cout<<"     3. Quitter"<<endl;
 
-    int input;
-    cin>>input;
-    if(input==1){
-        executer();
-    }else if(input==2){
-        afficherParametres();
-    }else if(input ==3 ){
-        finirLeJeux();
-    }
-    */
+void Application::afficheMenu(){
     bool jeuxEnCours=true;
     while(jeuxEnCours){
         cout<<"     _____JEUX CASSEBRIQUES____"<<endl;
         cout<<"     1. Lancer le jeux"<<endl;
-        cout<<"     2. Parametres"<<endl;
+        cout<<"     2. Charger les autre briques"<<endl;
         cout<<"     3. Quitter"<<endl;
 
         int input;
         cin>>input;
         if(input==1){
             executer();
+            cout<<"La casse brique va etre detruite"<<endl;
+            delete _cassebrique;
+            _cassebrique=new CasseBrique(_resolutionX,_resolutionY);
         }else if(input==2){
-            afficherParametres();
+            chargerAutreBrique();
         }else if(input ==3 ){
-            finirLeJeux();
             jeuxEnCours=false;
         }
     }
 
 
 }
-void Application::afficherParametres(){
-    cout<<"_____LES PARAMETRES____"<<endl;
-    cout<<"1. Balle"<<endl;
-    cout<<"2. Briques"<<endl;
-    cout<<"3. Application"<<endl;
-    cout<<"4. Menu principale"<<endl<<endl<<endl;
+
+void Application::chargerAutreBrique(){
+
+    _cassebrique->decharger();
+    cout<<"_____tapez entre 1_5____"<<endl;
+
 
     int input;
     cin>>input;
-    if(input==1){
-        executer();
-    }else if(input==2){
-        afficherParametres();
-    }else{
-
-    }
-}
-void Application::afficheMenuBalle(){
-    /*cout<<"_____LA BELLE DU JEUX____"<<endl;
-    cout<<"1. Changer la taille"<<endl;
-    cout<<"2. Changer la couleur"<<endl;
-    cout<<"3. Menu principale"<<endl<<endl<<endl<<endl;
-
-    int input;
-    cin>>input;
-    if(input==1){
-        executer();
-    }else if(input==2){
-        afficherParametres();
-    }else{
-        afficheMenu();
-    }*/
-}
-void Application::afficheMenuBrique(){
-    /*cout<<"_____LES BRIQUES DU JEUX____"<<endl;
-    cout<<"1. Changer les couleur"<<endl;
-    cout<<"2. Changer les vies des briques"<<endl;
-    cout<<"3. Menu principale"<<endl<<endl<<endl<<endl;
-
-    int input;
-    cin>>input;
-    if(input==1){
-        executer();
-    }else if(input==2){
-        afficherParametres();
-    }else{
-        afficheMenu();
-    }*/
+    _cassebrique->charger(input);
 
 }
 
 
 void Application::executer(){
-    bool running = true,quit=false;
-
-    while(!quit){
-        if(running){
-            initwindow( _resolutionX , _resolutionY , "WinBGIm Demo" );
-        }
-        while (running){
+    bool running = true;
+    bool initNedded=true;
+    if(initNedded){
+        initwindow( _resolutionX , _resolutionY , "WinBGIm Demo" );
+        initNedded=false;
+    }
+    while (running){
+        cleardevice();
+        afficher();
+        // logique du jeux
+        _cassebrique->logique();
+        if(_cassebrique->tousLesBriquesCasses()){
             cleardevice();
-            afficher();
-            mvtRaquette();
-            cout<<"Pour prendre des capture"<<endl;
-            if(_cassebrique->balle().position().y()<500){
-                int x;
-                cin>>x;
-            }
-
-            // logique du jeux
-            _cassebrique->logique();
-
-
-            if(_cassebrique->tousLesBriquesCasses()){
-                cleardevice();
-                cout<<"## FELICITATION VOUS AVEZ GAGNE##"<<endl;
-                afficheMenu();
-            }
-            if(!_cassebrique->balleTJREnJeux()){
-                cleardevice();
-                closegraph();
-                system("cls");
-                cout<<endl<<endl<<endl<<"           ## VOUS AVEZ PERDU##\n\n"<<endl;
-                afficheMenu();
-            }
+            cout<<"## FELICITATION VOUS AVEZ GAGNE##"<<endl;
+            running=false;
         }
-        std::cout<<"Hello gdebugger"<<std::endl;
-        int x;cin>>x;
+        if(!_cassebrique->balleTJREnJeux()){
+            cleardevice();
+            closegraph();
+            system("cls");
+            cout<<endl<<endl<<endl<<"           ## VOUS AVEZ PERDU##\n\n"<<endl;
+            running=false;
+        }
+        cout<<"running"<<endl;
+
     }
 }
+
 void Application::afficher(const Balle& b)const{
     setcolor(LIGHTCYAN);
 	circle(b.position().x(),b.position().y(),b.rayon());
@@ -198,6 +126,7 @@ void Application::afficher()const{
     afficher(_cassebrique->briques());
 }
 void Application::finirLeJeux(){
+    delete _cassebrique;
     system("cls");
     cout<<" MERCI D'AVOIR JOUER NOTRE JEUX "<<endl;
     cout<<"les sources codes sont disponible sur :"<<endl<<endl;

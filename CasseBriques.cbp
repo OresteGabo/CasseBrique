@@ -61,6 +61,7 @@
 		<Unit filename="tests/PositionT.cpp" />
 		<Unit filename="tests/RaquetteT.cpp" />
 		<Unit filename="tests/doctest.h" />
+		<Unit filename="variableGlobale.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

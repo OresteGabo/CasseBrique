@@ -9,7 +9,7 @@ public:
 	Raquette(double);
 	~Raquette();
 
-	void repositionnerX(int);
+	void positionnerX(int);
 	Position position()const;
 	int largeur()const;
 	int hauteur()const;

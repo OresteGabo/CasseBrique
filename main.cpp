@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    Application app;
+    Application app=Application(800,600);
     cout << "Hello world!" << endl;
     return 0;
 }

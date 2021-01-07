@@ -1,4 +1,4 @@
-#include"doctest.h"
+/*#include"doctest.h"
 #include"Cercle.h"
 
 
@@ -23,3 +23,4 @@ TESTCASE("Les tests des fonction qui nous renvois les valeurs"){
         REQUIRE_EQ(c.position(),Position(10,10));
     }
 }
+*/
