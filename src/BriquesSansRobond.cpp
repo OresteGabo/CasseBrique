@@ -2,14 +2,10 @@
 
 BriquesSansRobond::BriquesSansRobond(double x,double y,int v):
     BriquesCassable{x,y,v}
-{
-    //ctor
-}
+{}
 
 BriquesSansRobond::~BriquesSansRobond()
-{
-    //dtor
-}
+{}
 
 int BriquesSansRobond::style()const{
     return 8;

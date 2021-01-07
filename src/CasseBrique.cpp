@@ -159,7 +159,7 @@ void CasseBrique::decharger(){
 void CasseBrique::initialiser(){
     decharger();
     charger();
-    _balle.vitesse(0.005);
-    _raquette.position().x(FENETRE_X /2);
+    _balle.vitesse(0.007);
+    _raquette.position().x(FENETRE_X /4);
 
 }

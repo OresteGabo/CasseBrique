@@ -126,7 +126,9 @@ void Application::afficher()const{
     afficher(_cassebrique->briques());
 }
 void Application::finirLeJeux(){
-    delete _cassebrique;
+    ///La liberation de la memoire alloué
+    if (_cassebrique)
+        delete _cassebrique;
     system("cls");
     cout<<" MERCI D'AVOIR JOUER NOTRE JEUX "<<endl;
     cout<<"les sources codes sont disponible sur :"<<endl<<endl;

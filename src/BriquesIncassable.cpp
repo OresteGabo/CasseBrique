@@ -32,11 +32,6 @@ bool BriquesIncassable::collision(Balle& balle){
         double distanceX2 = abs(balle.leftX() - rightX());
         double distanceY1 = abs(balle.topY() - bottomY());
         double distanceY2 = abs(balle.bottomY() - topY());
-        if(distanceX1!=distanceX2){
-            std::cout<<"not equal"<<std::endl;
-        }else{
-            std::cout<<"not equal"<<std::endl;
-        }
 
         // bas
         if (balle.direction().y() < 0 && distanceY1 < distanceY2 && distanceY1 < distanceX1 && distanceY1 < distanceX2){
