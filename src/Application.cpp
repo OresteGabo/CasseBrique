@@ -36,7 +36,6 @@ void Application::afficheMenu(){
         cin>>input;
         if(input==1){
             executer();
-            cout<<"La casse brique va etre detruite"<<endl;
             delete _cassebrique;
             _cassebrique=new CasseBrique(_resolutionX,_resolutionY);
         }else if(input==2){

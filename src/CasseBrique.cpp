@@ -207,7 +207,7 @@ void CasseBrique::charger4(){
     _briques.push_back(new BriquesCassable(300,250,3));*/
 
     _briques.push_back(new BriquesIncassable(100,300));
-    for(int x=0;x<_briques.size();x++){
+    for(unsigned int x=0;x<_briques.size();x++){
         _briques[x]->hauteur(50);
         _briques[x]->largeur(100);
     }
