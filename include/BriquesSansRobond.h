@@ -11,11 +11,6 @@ class BriquesSansRobond : public BriquesCassable
         virtual ~BriquesSansRobond();
         virtual int style()const override;
         virtual bool collision(Balle&)override;
-
-
-    protected:
-
-    private:
 };
 
 #endif // BRIQUESSANSROBOND_H

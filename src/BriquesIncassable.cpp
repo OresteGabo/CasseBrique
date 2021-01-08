@@ -2,15 +2,9 @@
 
 BriquesIncassable::BriquesIncassable(double x,double y):
     Briques{x,y}
-{
-    //ctor
-}
-
+{}
 BriquesIncassable::~BriquesIncassable()
-{
-    //dtor
-}
-
+{}
 bool BriquesIncassable::vivant()const{
     return true;
 }
@@ -20,13 +14,11 @@ double BriquesIncassable::solidite()const{
 int BriquesIncassable::couleur()const{
     return 1;
 }
-
 int BriquesIncassable::style()const{
     return 2;
 }
 bool BriquesIncassable::collision(Balle& balle){
-
-    // If it's a collision
+    // si il y a la collision
     if (balle.topY() < bottomY() && balle.bottomY() > topY() && balle.rightX() > leftX() && balle.leftX() < rightX()){
         double distanceX1 = abs(balle.rightX() - leftX());
         double distanceX2 = abs(balle.leftX() - rightX());

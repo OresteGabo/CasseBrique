@@ -99,8 +99,8 @@ void CasseBrique::charger1(){
     srand(time(nullptr));
     for (int i = 2; i <4; i++){
         for (int j = 0; j < 10; j++){
-            int posX = FENETRE_X / 5 + j * 50;//40 represente la largeur des briques
-            int posY = 100 + i * 20;//20 represente la hauteur des briques
+            int posX = FENETRE_X / 5 + j * 50;
+            int posY = 100 + i * 20;
             _briques.push_back(new BriquesCassable(posX, posY,rand()%4));
             j++;
         }
@@ -109,16 +109,16 @@ void CasseBrique::charger1(){
     for (int i = 4; i < 5; i++){
         for (int j = 0; j < 10; j++){
             //j++;
-            int posX = FENETRE_X / 5 + j  * 60;//40 represente la largeur des briques
-            int posY = 100 + i * 20;//20 represente la hauteur des briques
+            int posX = FENETRE_X / 5 + j  * 60;
+            int posY = 100 + i * 20;
             _briques.push_back(new BriquesSansRobond(posX, posY,rand()%4));
         }
     }
 
     for (int i = 0; i < 1; i++){
         for (int j = 0; j < 10; j++){
-            int posX = FENETRE_X / 5 + j * 60;//40 represente la largeur des briques
-            int posY = 100 + i * 20;//20 represente la hauteur des briques
+            int posX = FENETRE_X / 5 + j * 60;
+            int posY = 100 + i * 20;
             _briques.push_back(new BriquesSansRobond(posX, posY,rand()%4));
         }
     }
@@ -126,8 +126,8 @@ void CasseBrique::charger1(){
     for (int i = 7; i < 8; i++){
         for (int j = 0; j < 10; j+=2){
 
-            int posX = FENETRE_X / 5 + j * 60;//40 represente la largeur des briques
-            int posY = 100 + i * 20;//20 represente la hauteur des briques
+            int posX = FENETRE_X / 5 + j * 60;
+            int posY = 100 + i * 20;
             _briques.push_back(new BriquesIncassable(posX, posY));
             j++;j++;
         }
@@ -193,7 +193,6 @@ void CasseBrique::charger3(){
         }
     }
 }
-
 void CasseBrique::decharger(){
     detruireBriques();
 }
@@ -202,5 +201,4 @@ void CasseBrique::initialiser(){
     charger();
     _balle.vitesse(0.007);
     _raquette.position().x(FENETRE_X /4);
-
 }

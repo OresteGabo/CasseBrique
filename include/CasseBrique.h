@@ -45,9 +45,6 @@ private:
 	void charger1();
 	void charger2();
 	void charger3();
-
-
 };
-
 
 #endif // CASSEBRIQUE_H

@@ -7,14 +7,10 @@ Position::Position(double x,double y):
 }
 Position::Position(double xy):
     Position{xy,xy}
-{
-}
-
+{}
 Position::Position():
     Position{0.0,0.0}
-{
-}
-
+{}
 void Position::x(double val){
     _x=val;
 }

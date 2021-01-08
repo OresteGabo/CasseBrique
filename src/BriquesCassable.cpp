@@ -2,15 +2,8 @@
 
 BriquesCassable::BriquesCassable(double x,double y,int vie):
     Briques{x,y},_vie{vie}
-{
-    //ctor
-}
-
-BriquesCassable::~BriquesCassable()
-{
-    //dtor
-}
-
+{}
+BriquesCassable::~BriquesCassable(){}
 bool BriquesCassable::vivant()const{
     return _vie>0;
 }
@@ -48,9 +41,8 @@ int BriquesCassable::style()const{
      return 11;
 }
 bool BriquesCassable::collision(Balle& balle){
-
     if (_vie > 0){
-        // If it's a collision
+        // si il y a la collision
         if (balle.topY() < bottomY() && balle.bottomY() > topY() && balle.rightX() > leftX() && balle.leftX() < rightX()){
             double distanceX1 = abs(balle.rightX() - leftX());
             double distanceX2 = abs(balle.leftX() - rightX());

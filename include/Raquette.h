@@ -14,15 +14,11 @@ public:
 	int largeur()const;
 	int hauteur()const;
 
-
-
 private:
     int _largeur;
     int _hauteur;
     Position _position;
 
 };
-
-
 
 #endif // RAQUETTE_H

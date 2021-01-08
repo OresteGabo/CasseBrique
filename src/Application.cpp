@@ -18,14 +18,12 @@ int Application::resolutionX()const{
 int Application::resolutionY()const{
     return _resolutionY;
 }
-
 void Application::resolutionX(int x){
     _resolutionX=x;
 }
 void Application::resolutionY(int y){
     _resolutionY=y;
 }
-
 void Application::afficheMenu(){
     bool jeuxEnCours=true;
     while(jeuxEnCours){
@@ -47,23 +45,15 @@ void Application::afficheMenu(){
             jeuxEnCours=false;
         }
     }
-
-
 }
 
 void Application::chargerAutreBrique(){
-
     _cassebrique->decharger();
     cout<<"_____tapez entre 1_3____"<<endl;
-
-
     int input;
     cin>>input;
     _cassebrique->charger(input);
-
 }
-
-
 void Application::executer(){
     bool running = true;
     bool initNedded=true;
@@ -89,10 +79,8 @@ void Application::executer(){
             running=false;
         }
         cout<<"running"<<endl;
-
     }
 }
-
 void Application::afficher(const Balle& b)const{
     setcolor(b.couleur());
 	circle(b.position().x(),b.position().y(),b.rayon());

@@ -4,12 +4,9 @@ Briques::Briques(double x,double y):
     _position{x,y},
     _largeur{40},
     _hauteur{20}
-{
-}
-
+{}
 Briques::~Briques()
-{
-}
+{}
 Position Briques::position()const{
     return _position;
 }

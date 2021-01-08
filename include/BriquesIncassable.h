@@ -16,10 +16,6 @@ class BriquesIncassable : public Briques
         virtual int couleur()const override;
         virtual int style()const override;
         virtual bool collision(Balle&)override;
-
-    protected:
-
-    private:
 };
 
 #endif // BRIQUESINCASSABLE_H
