@@ -1,7 +1,9 @@
 #ifndef BRIQUESINCASSABLES_H
 #define BRIQUESINCASSABLES_H
 #include"Briques.h"
-
+#include<iostream>
+#include<ctime>
+#include<cstdlib>
 class BriquesCassable:public Briques
 {
     public:

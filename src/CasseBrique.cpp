@@ -1,10 +1,11 @@
 #include "CasseBrique.h"
-#include<iostream>
+
 #include"../variableGlobale.h"
 CasseBrique::CasseBrique(int resolutionX,int resolutionY):
     _balle{Balle(10)},
-    _resolutionX{resolutionX},
-    _raquette{Raquette(resolutionY)}
+    _raquette{Raquette(resolutionY)},
+    _resolutionX{resolutionX}
+
 {
     charger();
 }
@@ -33,7 +34,7 @@ void CasseBrique::logique(){
     }
 }
 bool CasseBrique::balleTJREnJeux()const{
-    return _balle.position().y() < 600;
+    return _balle.position().y() < 600-_balle.rayon();
 }
 const Balle& CasseBrique::balle()const{
     return _balle;
@@ -49,8 +50,12 @@ bool CasseBrique::tousLesBriquesCasses()const{
     return true;
 }
 void CasseBrique::detruireBriques(){
-    for(unsigned int x=0;x<_briques.size();x++)
-        delete _briques[x];
+    for(unsigned int x=0;x<_briques.size();x++){
+        if(_briques[x]!=nullptr){
+            delete _briques[x];
+        }
+    }
+    _briques.resize(0);
 }
 vector<Briques*> CasseBrique::briques()const{
     return _briques;
@@ -61,16 +66,15 @@ void CasseBrique::avancer(){
     _balle.position().x(_balle.position().x()+_balle.direction().x()*_balle.vitesse());
 	_balle.position().y(_balle.position().y()+_balle.direction().y()*_balle.vitesse());
 
-	if (_balle.position().x() > _resolutionX -_balle.rayon())
+	if (_balle.position().x() +_balle.rayon()>=_resolutionX )
 		_balle.direction().x( -abs(_balle.direction().x()));
-	if (_balle.position().x() < 10)
+	if (_balle.position().x() < _balle.rayon())
 		_balle.direction().x( abs(_balle.direction().x()));
-	if (_balle.position().y() < 10)
+	if (_balle.position().y() < _balle.rayon())
 		_balle.direction().y( abs(_balle.direction().y()));
-    if(_balle.position().y() > _resolutionY ){
+    if(_balle.position().y() > _resolutionY )
         _balle.direction().xy(0,0);
 
-    }
 }
 
 void CasseBrique::charger(int charge){
@@ -84,12 +88,6 @@ void CasseBrique::charger(int charge){
       case 3 :
          charger3();
          break;
-      case 4 :
-         charger4();
-         break;
-      case 5 :
-         charger5();
-         break;
       default :
          cout << "charge inexistant!!    La charge par defaut est utilisé" << endl;
          charger1();
@@ -97,11 +95,13 @@ void CasseBrique::charger(int charge){
    }
 }
 void CasseBrique::charger1(){
+    decharger();
+    srand(time(nullptr));
     for (int i = 2; i <4; i++){
         for (int j = 0; j < 10; j++){
-            int posX = FENETRE_X / 3 + j * 40;//40 represente la largeur des briques
+            int posX = FENETRE_X / 5 + j * 50;//40 represente la largeur des briques
             int posY = 100 + i * 20;//20 represente la hauteur des briques
-            _briques.push_back(new BriquesCassable(posX, posY,2));
+            _briques.push_back(new BriquesCassable(posX, posY,rand()%4));
             j++;
         }
     }
@@ -109,27 +109,27 @@ void CasseBrique::charger1(){
     for (int i = 4; i < 5; i++){
         for (int j = 0; j < 10; j++){
             //j++;
-            int posX = FENETRE_X / 3 + j  * 40;//40 represente la largeur des briques
+            int posX = FENETRE_X / 5 + j  * 60;//40 represente la largeur des briques
             int posY = 100 + i * 20;//20 represente la hauteur des briques
-            _briques.push_back(new BriquesCassable(posX, posY,3));
+            _briques.push_back(new BriquesSansRobond(posX, posY,rand()%4));
         }
     }
 
     for (int i = 0; i < 1; i++){
         for (int j = 0; j < 10; j++){
-            int posX = FENETRE_X / 3 + j * 40;//40 represente la largeur des briques
+            int posX = FENETRE_X / 5 + j * 60;//40 represente la largeur des briques
             int posY = 100 + i * 20;//20 represente la hauteur des briques
-            _briques.push_back(new BriquesCassable(posX, posY,3));
+            _briques.push_back(new BriquesSansRobond(posX, posY,rand()%4));
         }
     }
 
     for (int i = 7; i < 8; i++){
         for (int j = 0; j < 10; j+=2){
 
-            int posX = FENETRE_X / 3 + j * 40;//40 represente la largeur des briques
+            int posX = FENETRE_X / 5 + j * 60;//40 represente la largeur des briques
             int posY = 100 + i * 20;//20 represente la hauteur des briques
-            //_briques.push_back(new BriquesIncassable(266, 306.66));
-            //j++;j++;
+            _briques.push_back(new BriquesIncassable(posX, posY));
+            j++;j++;
         }
     }
     _briques.push_back(new BriquesIncassable(266.66, 300));
@@ -142,17 +142,58 @@ void CasseBrique::charger1(){
 
 }
 void CasseBrique::charger2(){
-    charger1();
+    decharger();
+    srand(time(nullptr));
+    for (int i = 2; i <4; i++){
+        for (int j = 0; j < 10; j++){
+            int posX = FENETRE_X / 5 + j * 60;
+            int posY = 100 + i * 20;
+            _briques.push_back(new BriquesCassable(posX, posY,rand()%4));
+        }
+    }
+    for (int i = 4; i < 5; i++){
+        for (int j = 0; j < 10; j++){
+            int posX = FENETRE_X/ 5 + j  * 60;
+            int posY = 100 + i * 20;
+            _briques.push_back(new BriquesCassable(posX, posY,rand()%4));
+        }
+    }
+
+    for (int i = 0; i < 2; i++){
+        for (int j = 0; j < 10; j++){
+            int posX = FENETRE_X / 5 + j * 60;;
+            int posY = 100 + i * 20;
+            _briques.push_back(new BriquesCassable(posX, posY,rand()%4));
+        }
+    }
 }
 void CasseBrique::charger3(){
-    charger1();
+    decharger();
+    srand(time(nullptr));
+
+    for (int i = 0; i < 2; i++){
+        for (int j = 0; j < 15; j++){
+            int posX = FENETRE_X / 5 + (j - 7) * 60;
+            int posY = 100 + i * 20;
+            _briques.push_back(new BriquesCassable(posX, posY,rand()%4));
+        }
+    }
+    for (int i = 4; i < 5; i++){
+        for (int j = 0; j < 15; j++){
+            int posX = FENETRE_X / 5 + (j - 7) * 60;
+            int posY = 100 + i * 20;
+            _briques.push_back(new BriquesCassable(posX, posY,rand()%4));
+        }
+    }
+    for (int i = 2; i <4; i++){
+        for (int j = 0; j < 15; j++){
+            int posX = FENETRE_X / 5 + (j - 7) * 60;
+            int posY = 100 + i * 20;
+            _briques.push_back(new BriquesSansRobond(posX, posY,rand()%4));
+        }
+    }
 }
-void CasseBrique::charger4(){
-    charger1();
-}
-void CasseBrique::charger5(){
-    charger1();
-}
+
 void CasseBrique::decharger(){
     detruireBriques();
 }

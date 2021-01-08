@@ -5,15 +5,12 @@
 #include <ctime>
 #include<graphics.h>
 #include "Raquette.h"
-//#include "CasseBrique.h"
-//#include"constVariables.h"
 #include"Cercle.h"
 #include"Briques.h"
-//class Raquette;
 class Briques;
 class Balle:public Cercle{
 public:
-	Balle(double);
+	Balle(double,int c=LIGHTCYAN);
 	~Balle();
 
 	void avancer();

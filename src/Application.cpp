@@ -54,7 +54,7 @@ void Application::afficheMenu(){
 void Application::chargerAutreBrique(){
 
     _cassebrique->decharger();
-    cout<<"_____tapez entre 1_5____"<<endl;
+    cout<<"_____tapez entre 1_3____"<<endl;
 
 
     int input;
@@ -94,10 +94,10 @@ void Application::executer(){
 }
 
 void Application::afficher(const Balle& b)const{
-    setcolor(LIGHTCYAN);
+    setcolor(b.couleur());
 	circle(b.position().x(),b.position().y(),b.rayon());
-    setfillstyle(SOLID_FILL,LIGHTCYAN);
-	floodfill(b.position().x(),b.position().y(),LIGHTCYAN);
+    setfillstyle(SOLID_FILL,b.couleur());
+	floodfill(b.position().x(),b.position().y(),b.couleur());
 }
 void Application::afficher(const vector<Briques*> br)const{
     for(unsigned int x=0;x<br.size();x++){

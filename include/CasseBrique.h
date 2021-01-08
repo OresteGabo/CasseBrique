@@ -45,8 +45,6 @@ private:
 	void charger1();
 	void charger2();
 	void charger3();
-	void charger4();
-	void charger5();
 
 
 };

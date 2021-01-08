@@ -102,7 +102,7 @@
 	<memory>
 	<iostream>
 
-1610057261 c:\users\muhir\videos\cassebrique\include\cassebrique.h
+1610079728 c:\users\muhir\videos\cassebrique\include\cassebrique.h
 	<memory>
 	"Balle.h"
 	"Raquette.h"
@@ -112,7 +112,7 @@
 	"BriquesCassable.h"
 	<vector>
 
-1610051571 c:\users\muhir\videos\cassebrique\include\balle.h
+1610058900 c:\users\muhir\videos\cassebrique\include\balle.h
 	"Position.h"
 	<ctime>
 	<graphics.h>
@@ -143,13 +143,16 @@
 1609818258 c:\users\muhir\videos\cassebrique\include\briquessansrobond.h
 	"BriquesCassable.h"
 
-1610045297 c:\users\muhir\videos\cassebrique\include\briquescassable.h
+1610078602 c:\users\muhir\videos\cassebrique\include\briquescassable.h
 	"Briques.h"
+	<iostream>
+	<ctime>
+	<cstdlib>
 
-1610057872 source:c:\users\muhir\videos\cassebrique\src\application.cpp
+1610079795 source:c:\users\muhir\videos\cassebrique\src\application.cpp
 	"Application.h"
 
-1610051392 source:c:\users\muhir\videos\cassebrique\src\balle.cpp
+1610058915 source:c:\users\muhir\videos\cassebrique\src\balle.cpp
 	"Balle.h"
 	"../variableGlobale.h"
 
@@ -165,9 +168,8 @@
 1610057746 source:c:\users\muhir\videos\cassebrique\src\briquessansrobond.cpp
 	"BriquesSansRobond.h"
 
-1610058148 source:c:\users\muhir\videos\cassebrique\src\cassebrique.cpp
+1610080224 source:c:\users\muhir\videos\cassebrique\src\cassebrique.cpp
 	"CasseBrique.h"
-	<iostream>
 	"../variableGlobale.h"
 
 1610043724 source:c:\users\muhir\videos\cassebrique\src\cercle.cpp
