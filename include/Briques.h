@@ -3,6 +3,10 @@
 #include"Position.h"
 #include"Balle.h"
 #include <graphics.h>
+#include<iostream>
+using std::cin;
+using std::cout;
+using std::endl;
 class Balle;
 class Briques
 {
@@ -13,6 +17,7 @@ class Briques
         virtual ~Briques();
 
         virtual bool vivant()const=0;
+        virtual bool utilisable()const=0;
         virtual double solidite()const =0;
         virtual int couleur()const=0;
         virtual int style()const=0;
@@ -35,8 +40,8 @@ class Briques
         double rightX()const{return _position.x() + _largeur / 2;}
         Position _position;
     private:
-        int _largeur=40;
-        int _hauteur=20;
+        int _largeur;
+        int _hauteur;
 
 };
 

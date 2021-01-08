@@ -34,6 +34,7 @@ public:
     void decharger();
     void charger(int c=1);
 
+
 private:
 	Balle _balle;
 	Raquette _raquette;
@@ -45,6 +46,7 @@ private:
 	void charger1();
 	void charger2();
 	void charger3();
+	void charger4();
 };
 
 #endif // CASSEBRIQUE_H

@@ -49,7 +49,7 @@ void Application::afficheMenu(){
 
 void Application::chargerAutreBrique(){
     _cassebrique->decharger();
-    cout<<"_____tapez entre 1_3____"<<endl;
+    cout<<"_____tapez entre 1_4____"<<endl;
     int input;
     cin>>input;
     _cassebrique->charger(input);
@@ -68,6 +68,8 @@ void Application::executer(){
         _cassebrique->logique();
         if(_cassebrique->tousLesBriquesCasses()){
             cleardevice();
+            closegraph();
+            system("cls");
             cout<<"## FELICITATION VOUS AVEZ GAGNE##"<<endl;
             running=false;
         }
@@ -78,7 +80,6 @@ void Application::executer(){
             cout<<endl<<endl<<endl<<"           ## VOUS AVEZ PERDU##\n\n"<<endl;
             running=false;
         }
-        cout<<"running"<<endl;
     }
 }
 void Application::afficher(const Balle& b)const{
@@ -89,7 +90,7 @@ void Application::afficher(const Balle& b)const{
 }
 void Application::afficher(const vector<Briques*> br)const{
     for(unsigned int x=0;x<br.size();x++){
-        if(br[x]->vivant()){
+        if(br[x]->utilisable()){
             setcolor(br[x]->couleur());
             double x1= br[x]->position().x() - br[x]->largeur() / 2 + 1;
             double y1= br[x]->position().y() - br[x]->hauteur() / 2 + 1;

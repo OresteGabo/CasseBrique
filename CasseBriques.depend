@@ -102,7 +102,7 @@
 	<memory>
 	<iostream>
 
-1610081106 c:\users\muhir\videos\cassebrique\include\cassebrique.h
+1610086778 c:\users\muhir\videos\cassebrique\include\cassebrique.h
 	<memory>
 	"Balle.h"
 	"Raquette.h"
@@ -132,43 +132,44 @@
 	<iostream>
 	"Position.h"
 
-1610043724 c:\users\muhir\videos\cassebrique\include\briques.h
+1610087302 c:\users\muhir\videos\cassebrique\include\briques.h
 	"Position.h"
 	"Balle.h"
 	<graphics.h>
+	<iostream>
 
-1610081027 c:\users\muhir\videos\cassebrique\include\briquesincassable.h
+1610087156 c:\users\muhir\videos\cassebrique\include\briquesincassable.h
 	<Briques.h>
 
 1610081027 c:\users\muhir\videos\cassebrique\include\briquessansrobond.h
 	"BriquesCassable.h"
 
-1610078602 c:\users\muhir\videos\cassebrique\include\briquescassable.h
+1610087156 c:\users\muhir\videos\cassebrique\include\briquescassable.h
 	"Briques.h"
 	<iostream>
 	<ctime>
 	<cstdlib>
 
-1610081027 source:c:\users\muhir\videos\cassebrique\src\application.cpp
+1610088737 source:c:\users\muhir\videos\cassebrique\src\application.cpp
 	"Application.h"
 
-1610081027 source:c:\users\muhir\videos\cassebrique\src\balle.cpp
+1610088113 source:c:\users\muhir\videos\cassebrique\src\balle.cpp
 	"Balle.h"
 	"../variableGlobale.h"
 
 1610081027 source:c:\users\muhir\videos\cassebrique\src\briques.cpp
 	"Briques.h"
 
-1610081027 source:c:\users\muhir\videos\cassebrique\src\briquescassable.cpp
+1610088062 source:c:\users\muhir\videos\cassebrique\src\briquescassable.cpp
 	"BriquesCassable.h"
 
-1610081027 source:c:\users\muhir\videos\cassebrique\src\briquesincassable.cpp
+1610087676 source:c:\users\muhir\videos\cassebrique\src\briquesincassable.cpp
 	"BriquesIncassable.h"
 
 1610081027 source:c:\users\muhir\videos\cassebrique\src\briquessansrobond.cpp
 	"BriquesSansRobond.h"
 
-1610081027 source:c:\users\muhir\videos\cassebrique\src\cassebrique.cpp
+1610088574 source:c:\users\muhir\videos\cassebrique\src\cassebrique.cpp
 	"CasseBrique.h"
 	"../variableGlobale.h"
 

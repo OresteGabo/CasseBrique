@@ -44,8 +44,9 @@ const Raquette& CasseBrique::raquette()const{
 }
 bool CasseBrique::tousLesBriquesCasses()const{
     for(unsigned int x=0;x<_briques.size();x++){
-        if(_briques[x]->vivant())
+        if(_briques[x]->vivant()){
             return false;
+        }
     }
     return true;
 }
@@ -60,7 +61,6 @@ void CasseBrique::detruireBriques(){
 vector<Briques*> CasseBrique::briques()const{
     return _briques;
 }
-
 void CasseBrique::avancer(){
     // Logic of the ball movement. If it hits the upper or lower walls it bounces back
     _balle.position().x(_balle.position().x()+_balle.direction().x()*_balle.vitesse());
@@ -79,20 +79,23 @@ void CasseBrique::avancer(){
 
 void CasseBrique::charger(int charge){
     switch(charge) {
-      case 1 :
-         charger1();
-         break;
-      case 2 :
-          charger2();
-         break;
-      case 3 :
-         charger3();
-         break;
-      default :
-         cout << "charge inexistant!!    La charge par defaut est utilisé" << endl;
-         charger1();
+        case 1 :
+            charger1();
+            break;
+        case 2 :
+            charger2();
+            break;
+        case 3 :
+            charger3();
+            break;
+        case 4 :
+            charger4();
+            break;
+        default :
+            cout << "charge inexistant!!    La charge par defaut est utilisé" << endl;
+            charger1();
 
-   }
+    }
 }
 void CasseBrique::charger1(){
     decharger();
@@ -192,6 +195,23 @@ void CasseBrique::charger3(){
             _briques.push_back(new BriquesSansRobond(posX, posY,rand()%4));
         }
     }
+}
+void CasseBrique::charger4(){
+    srand(time(nullptr));
+    _briques.push_back(new BriquesSansRobond(100,200,1));
+    /*_briques.push_back(new BriquesSansRobond(200,200,2));
+    _briques.push_back(new BriquesSansRobond(300,200,3));
+
+    _briques.push_back(new BriquesCassable(100,250,1));
+    _briques.push_back(new BriquesCassable(200,250,2));
+    _briques.push_back(new BriquesCassable(300,250,3));*/
+
+    _briques.push_back(new BriquesIncassable(100,300));
+    for(int x=0;x<_briques.size();x++){
+        _briques[x]->hauteur(50);
+        _briques[x]->largeur(100);
+    }
+
 }
 void CasseBrique::decharger(){
     detruireBriques();

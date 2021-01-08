@@ -7,6 +7,9 @@ BriquesCassable::~BriquesCassable(){}
 bool BriquesCassable::vivant()const{
     return _vie>0;
 }
+bool BriquesCassable::utilisable()const{
+    return vivant();
+}
 double BriquesCassable::solidite()const{
     if(_vie==1){
         return 0.75;

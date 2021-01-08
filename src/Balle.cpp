@@ -3,7 +3,7 @@
 Balle::Balle(double r,int c):
     Cercle{r,Position(FENETRE_X/2,FENETRE_Y-20)},
     _direction{rand()%300,-300},
-    _vitesse{0.007},
+    _vitesse{0.005},
     _couleur{c}
 {
 }

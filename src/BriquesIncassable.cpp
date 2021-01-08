@@ -6,6 +6,9 @@ BriquesIncassable::BriquesIncassable(double x,double y):
 BriquesIncassable::~BriquesIncassable()
 {}
 bool BriquesIncassable::vivant()const{
+    return false;
+}
+bool BriquesIncassable::utilisable()const{
     return true;
 }
 double BriquesIncassable::solidite()const{

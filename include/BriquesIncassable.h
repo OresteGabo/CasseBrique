@@ -12,6 +12,7 @@ class BriquesIncassable : public Briques
         /** Default destructor */
         virtual ~BriquesIncassable();
         virtual bool vivant()const override;
+        virtual bool utilisable()const override;
         virtual double solidite()const override;
         virtual int couleur()const override;
         virtual int style()const override;
