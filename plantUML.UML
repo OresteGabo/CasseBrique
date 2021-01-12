@@ -1,0 +1,223 @@
+@startuml
+abstract Cercle{
+__ private data __
+  + position()
+  + topY()
+  + bottomY()
+  + leftX()
+  + rightX()
+  + rayon()
+  + surface()
+  + diametre()
+
+
+  .. Les setters ..
+  + rayon()
+  __ private data __
+  Position _position
+  int _rayon
+
+}
+abstract Briques{
+  .. Les Getters ..
+  +Briques(double,double);
+        +virtual ~Briques();
+
+        .. pure virtual fx ..
+        +virtual bool vivant()const=0
+        +virtual bool utilisable()const=0
+        +virtual double solidite()const =0
+        +virtual int couleur()const=0
+        +virtual int style()const=0
+        +virtual bool collision(Balle&)=0
+
+
+        +Position position()const
+        +void position(const Position&)
+        +int largeur()const
+        +int hauteur()const
+        +void largeur(int)
+        +void hauteur(int)
+  __ protected data __
+     +double topY()const
+        +double bottomY()const
+        +double leftX()const
+        +double rightX()const
+  Position _position
+  __ private data __
+
+  int largeur
+  int hauteur
+}
+class Position{
+     __public data__
+        Position(double,double)
+        Position(double)
+        Position()
+
+        ~Position()
+        +double x()const
+        +double y()const
+        +void x(double)
+        +void y(double)
+        +void xy(double,double);
+        +double distance(const Position&)const
+        +double distance(int,int)const
+
+    __private data__
+        double _x
+        double _y
+}
+class Raquette{
+__public__
+	Raquette(double)
+	~Raquette()
+
+	+void positionnerX(int)
+	+Position position()const
+	+int largeur()const
+	+int hauteur()const
+
+__private__
+    int _largeur
+    int _hauteur
+    Position _position
+
+}
+abstract class BriquesCassable
+{
+    __public__
+        BriquesCassable(double,double,int)
+
+        +virtual ~BriquesCassable()
+        +virtual bool vivant()const override
+        +virtual bool utilisable()const override
+        +virtual double solidite()const override
+        +virtual int couleur()const override
+        +virtual int style()const override
+        +virtual bool collision(Balle&)override
+
+    __protected__
+        int _vie
+}
+class BriquesIncassable
+{
+    __public__
+        BriquesIncassable(double,double)
+        +virtual ~BriquesIncassable()
+        +virtual bool vivant()const override
+        +virtual bool utilisable()const override
+        +virtual double solidite()const override
+        +virtual int couleur()const override
+        +virtual int style()const override
+        +virtual bool collision(Balle&)override
+}
+class BriquesSansRobond
+{
+    __public__
+        +BriquesSansRobond(double x,double y,int v)
+        +virtual ~BriquesSansRobond()
+        +virtual int style()const override
+        +virtual bool collision(Balle&)override
+}
+class Balle{
+__public__
+	Balle(double,int c=LIGHTCYAN)
+	~Balle()
+
+	void avancer()
+	void collision(const Raquette&r)
+
+	+Position position()const
+	+void position(const Position&)
+	+Position direction()const
+	+void direction(const Position&)
+	+void vitesse(double)
+	+double vitesse()const
+	+void ajusterVitesse(const Briques& br)
+	+int couleur()const
+	+void couleur(int)
+
+
+__private__
+	Position _direction
+	double _vitesse
+	int _couleur
+}
+
+class CasseBrique
+{
+__public__
+	CasseBrique(int resolutionX,int resolutionY);
+	~CasseBrique();
+
+	double positionSourie()const;
+	void logique();
+
+    +const Balle& balle()const;
+    +const Raquette& raquette()const;
+    +vector<Briques*> briques()const;
+    +bool tousLesBriquesCasses()const;
+    +bool balleTJREnJeux()const;
+    +void avancer();
+    +void initialiser();
+    +void decharger();
+    +void charger(int c=1);
+
+
+__private__
+	Balle _balle;
+	Raquette _raquette;
+	vector<Briques*> _briques;
+	int _resolutionX;
+	int _resolutionY;
+
+	+void detruireBriques();
+	+void charger1();
+	+void charger2();
+	+void charger3();
+	+void charger4();
+}
+
+
+class Application
+{
+    __public__
+        Application(int ,int);
+        virtual ~Application();
+        void executer();
+        int resolutionX()const;
+        int resolutionY()const;
+        void resolutionX(int);
+        void resolutionY(int);
+
+    __private__
+        void afficherParametres();
+        void chargerAutreBrique();
+        void changerCouleurBalle();
+        void afficheMenu();
+        void finirLeJeux();
+
+        void afficher(const Balle&)const;
+        void afficher(const vector<Briques*> br)const;
+        void afficher(const Raquette&)const;
+        void afficher()const;
+
+        CasseBrique* _cassebrique;
+        double _tempsExec;
+        int _resolutionX,_resolutionY;
+}
+Application *-- CasseBrique : has
+CasseBrique *-- Briques : has
+CasseBrique *-- Balle : has 1 >
+CasseBrique *-- Raquette : has 1 >
+Cercle <|-- Balle
+abstract Briques
+Briques <|-- BriquesCassable
+Briques <|-- BriquesIncassable
+BriquesCassable <|-- BriquesSansRobond
+
+Briques *-- Position : has
+Cercle *-- Position : has
+Raquette *-- Position : has
+@enduml
