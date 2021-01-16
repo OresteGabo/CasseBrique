@@ -14,13 +14,10 @@ bool BriquesIncassable::utilisable()const{
 double BriquesIncassable::solidite()const{
     return 1;
 }
-int BriquesIncassable::couleur()const{
-    return 1;
-}
 int BriquesIncassable::style()const{
     return 2;
 }
-bool BriquesIncassable::collision(Balle& balle){
+bool BriquesIncassable::collision(Cercle& balle){
     // si il y a la collision
     if (balle.topY() < bottomY() && balle.bottomY() > topY() && balle.rightX() > leftX() && balle.leftX() < rightX()){
         double distanceX1 = abs(balle.rightX() - leftX());
@@ -29,7 +26,7 @@ bool BriquesIncassable::collision(Balle& balle){
         double distanceY2 = abs(balle.bottomY() - topY());
 
         // bas
-        if (balle.direction().y() < 0 && distanceY1 < distanceY2 && distanceY1 < distanceX1 && distanceY1 < distanceX2){
+        /*if (balle.direction().y() < 0 && distanceY1 < distanceY2 && distanceY1 < distanceX1 && distanceY1 < distanceX2){
             balle.direction(Position(balle.direction().x(),-1*balle.direction().y()));
             balle.ajusterVitesse(*this);
             return true;
@@ -52,7 +49,7 @@ bool BriquesIncassable::collision(Balle& balle){
             balle.direction(Position(-1*balle.direction().x(),balle.direction().y()));
             balle.ajusterVitesse(*this);
             return true;
-        }
+        }*/
     }
     return false;
 }

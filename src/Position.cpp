@@ -35,3 +35,6 @@ double Position::distance(int x,int y)const{
 }
 Position::~Position()
 {}
+bool Position::operator==(const Position& p)const{
+    return _x==p.x() && _y==p.y();
+}

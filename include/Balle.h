@@ -16,21 +16,19 @@ public:
 	void avancer();
 	void collision(const Raquette&r);
 
-	Position position()const;
-	void position(const Position&);
+
 	Position direction()const;
 	void direction(const Position&);
 	void vitesse(double);
 	double vitesse()const;
 	void ajusterVitesse(const Briques& br);
-	int couleur()const;
-	void couleur(int);
+
 
 
 private:
 	Position _direction;
 	double _vitesse;
-	int _couleur;
+
 };
 
 #endif // BALLE_H

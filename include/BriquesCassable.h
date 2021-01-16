@@ -1,3 +1,4 @@
+#pragma once
 #ifndef BRIQUESINCASSABLES_H
 #define BRIQUESINCASSABLES_H
 #include"Briques.h"
@@ -14,9 +15,8 @@ class BriquesCassable:public Briques
         virtual bool vivant()const override;
         virtual bool utilisable()const override;
         virtual double solidite()const override;
-        virtual int couleur()const override;
         virtual int style()const override;
-        virtual bool collision(Balle&)override;
+        virtual bool collision(Cercle&)override;
 
     protected:
         int _vie;

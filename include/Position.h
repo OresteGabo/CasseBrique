@@ -18,6 +18,7 @@ class Position
         void xy(double,double);
         double distance(const Position&)const;
         double distance(int,int)const;
+        bool operator==(const Position&)const;
 
     private:
         double _x;

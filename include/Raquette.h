@@ -3,21 +3,15 @@
 #define RAQUETTE_H
 #include<graphics.h>
 #include "Position.h"
-
-class Raquette{
+#include"Rectangle.h"
+class Raquette:public Rectangle
+{
 public:
-	Raquette(double);
+	Raquette(double x=100,double y=10,const Position&p=Position(0,0));
 	~Raquette();
-
-	void positionnerX(int);
-	Position position()const;
-	int largeur()const;
-	int hauteur()const;
-
-private:
-    int _largeur;
-    int _hauteur;
-    Position _position;
+	virtual double solidite()const override;
+    virtual int style()const override;
+    void collision(Cercle&);
 
 };
 

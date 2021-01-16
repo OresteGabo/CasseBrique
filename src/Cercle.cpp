@@ -1,7 +1,7 @@
 
 #include "Cercle.h"
 
-Cercle::Cercle(double r,const Position& p):_rayon{r},_position{p}
+Cercle::Cercle(double r,const Position& p,int c):_rayon{r},_position{p},_couleur{c}
 {}
 Cercle::~Cercle()
 {}
@@ -10,6 +10,12 @@ double Cercle::rayon()const{
 }
 void Cercle::rayon(double val){
     _rayon=val;
+}
+void Cercle::position(const Position& p){
+    _position=p;
+}
+Position Cercle::position()const{
+    return _position;
 }
 double Cercle::diametre()const{return 2*_rayon;}
 double Cercle::topY()const{
@@ -23,4 +29,10 @@ double Cercle::leftX()const{
 }
 double Cercle::bottomY()const{
     return _position.y()+_rayon;
+}
+int Cercle::couleur()const{
+    return _couleur;
+}
+void Cercle::couleur(int c){
+    _couleur=c;
 }

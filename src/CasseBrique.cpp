@@ -1,6 +1,6 @@
 #include "CasseBrique.h"
 
-#include"../variableGlobale.h"
+
 CasseBrique::CasseBrique(int resolutionX,int resolutionY):
     _balle{Balle(10)},
     _raquette{Raquette(resolutionY)},
@@ -18,21 +18,25 @@ double CasseBrique::positionSourie()const{
     GetCursorPos(&cursorPosition);
     return double(cursorPosition.x);
 }
+
+
+
 void CasseBrique::logique(){
     // Avancer la balle
     _balle.avancer();
 
     // bouger la raquette a partir de la position du souri
-    _raquette.positionnerX(positionSourie());
+    _raquette.positionX(positionSourie());
 
     //chercher si la balle touche la raquette, puis changer sa speed en negative
-    _balle.collision(_raquette);
+    //_balle.collision(_raquette);
 
     // Si la balle touche l'un des briques
     for(unsigned int x=0;x<_briques.size();x++){
         _briques[x]->collision(_balle);
     }
 }
+
 bool CasseBrique::balleTJREnJeux()const{
     return _balle.position().y() < 600-_balle.rayon();
 }

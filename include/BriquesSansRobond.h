@@ -1,3 +1,4 @@
+#pragma once
 #ifndef BRIQUESSANSROBOND_H
 #define BRIQUESSANSROBOND_H
 
@@ -10,7 +11,7 @@ class BriquesSansRobond : public BriquesCassable
         BriquesSansRobond(double x,double y,int v);
         virtual ~BriquesSansRobond();
         virtual int style()const override;
-        virtual bool collision(Balle&)override;
+        virtual bool collision(Cercle&)override;
 };
 
 #endif // BRIQUESSANSROBOND_H

@@ -1,14 +1,14 @@
+#pragma once
 #ifndef BRIQUES_H
 #define BRIQUES_H
 #include"Position.h"
 #include"Balle.h"
 #include <graphics.h>
 #include<iostream>
-using std::cin;
-using std::cout;
-using std::endl;
-class Balle;
-class Briques
+#include"Rectangle.h"
+using namespace std;
+
+class Briques:public Rectangle
 {
     public:
         /** Default constructor */
@@ -18,30 +18,11 @@ class Briques
 
         virtual bool vivant()const=0;
         virtual bool utilisable()const=0;
+
         virtual double solidite()const =0;
-        virtual int couleur()const=0;
         virtual int style()const=0;
-        virtual bool collision(Balle&)=0;
+        virtual bool collision(Cercle&)=0;
 
-
-        Position position()const;
-        void position(const Position&);
-        int largeur()const;
-        int hauteur()const;
-        void largeur(int);
-        void hauteur(int);
-
-
-
-    protected:
-        double topY()const{return _position.y() - _hauteur / 2;}
-        double bottomY()const{return _position.y() + _hauteur / 2;}
-        double leftX()const{return  _position.x() - _largeur / 2;}
-        double rightX()const{return _position.x() + _largeur / 2;}
-        Position _position;
-    private:
-        int _largeur;
-        int _hauteur;
 
 };
 

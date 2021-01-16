@@ -1,28 +1,29 @@
 #include "Raquette.h"
-#include"../variableGlobale.h"
 
-Raquette::Raquette(double y):
-    _largeur{100},
-    _hauteur{10},
-    _position{Position(FENETRE_X /2,FENETRE_Y-_hauteur*2)}{}
+
+Raquette::Raquette(double x,double y,const Position& p):
+    Rectangle{x,y,p}
+{
+    if(p==Position(0,0)){
+        //p=Position(FENETRE_X /2,FENETRE_Y-_hauteur*2);
+    }
+
+}
 Raquette::~Raquette(){
 }
-void Raquette::positionnerX(int xPos){
-	// Moves the paddle to a specified position, also making sure it doesn't go outside the screen
-	_position.x( xPos);
-	if (_position.x() < _largeur / 2){
-		_position.x(_largeur / 2);
-	}
-	if (_position.x() > FENETRE_X - _largeur / 2){
-		_position.x( FENETRE_X - _largeur / 2);
-	}
+
+double Raquette::solidite()const{
+    return 1;
 }
-Position Raquette::position()const{
-    return _position;
+
+int Raquette::style()const{
+    return 1;
 }
-int Raquette::largeur()const{
-    return _largeur;
-}
-int Raquette::hauteur()const{
-    return _hauteur;
+void Raquette::collision(Cercle& balle){
+    /*if (_position.y() > FENETRE_Y - ((diametre())+r.hauteur()) && _direction.y() > 0){
+		if (_position.x() > r.position().x() - r.largeur() / 2 &&
+            _position.x() < r.position().x() + r.largeur()/2 ){
+			_direction.y( -_direction.y());
+		}
+	}*/
 }

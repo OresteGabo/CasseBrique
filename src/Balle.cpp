@@ -1,10 +1,9 @@
 #include "Balle.h"
-#include "../variableGlobale.h"
+
 Balle::Balle(double r,int c):
-    Cercle{r,Position(FENETRE_X/2,FENETRE_Y-20)},
+    Cercle{r,Position(FENETRE_X/2,FENETRE_Y-20),c},
     _direction{rand()%300,-300},
-    _vitesse{0.005},
-    _couleur{c}
+    _vitesse{0.005}
 {
 }
 Balle::~Balle(){}
@@ -26,22 +25,6 @@ void Balle::avancer(){
 void Balle::ajusterVitesse(const Briques& br){
     _vitesse*=br.solidite();
 }
-void Balle::collision(const Raquette&r){
-    //detecter la collision avec la raquette, et faire le rebond
-	if (_position.y() > FENETRE_Y - ((diametre())+r.hauteur()) && _direction.y() > 0){
-		if (_position.x() > r.position().x() - r.largeur() / 2 &&
-            _position.x() < r.position().x() + r.largeur()/2 ){
-			_direction.y( -_direction.y());
-		}
-	}
-}
-
-Position Balle::position()const{
-    return _position;
-}
-void Balle::position(const Position& p){
-    _position=p;
-}
 Position Balle::direction()const{
     return _direction;
 }
@@ -54,9 +37,4 @@ void Balle::vitesse(double v){
 double Balle::vitesse()const{
     return _vitesse;
 }
-int Balle::couleur()const{
-    return _couleur;
-}
-void Balle::couleur(int c){
-    _couleur=c;
-}
+

@@ -21,6 +21,7 @@ double BriquesCassable::solidite()const{
     }
     return 1;
 }
+/*
 int BriquesCassable::couleur()const{
      switch(_vie) {
       case 3 :
@@ -39,13 +40,16 @@ int BriquesCassable::couleur()const{
           return 2;//GREEN
    }
 }
-
+*/
 int BriquesCassable::style()const{
      return 11;
 }
-bool BriquesCassable::collision(Balle& balle){
+bool BriquesCassable::collision(Cercle& balle){
     if (_vie > 0){
         // si il y a la collision
+        if(Rectangle::collision(balle)){
+
+        }
         if (balle.topY() < bottomY() && balle.bottomY() > topY() && balle.rightX() > leftX() && balle.leftX() < rightX()){
             double distanceX1 = abs(balle.rightX() - leftX());
             double distanceX2 = abs(balle.leftX() - rightX());
@@ -53,7 +57,7 @@ bool BriquesCassable::collision(Balle& balle){
             double distanceY2 = abs(balle.bottomY() - topY());
 
             //haut
-            if (balle.direction().y() > 0 && distanceY2 < distanceY1 && distanceY2 < distanceX1 && distanceY2 < distanceX2){
+            /*if (balle.direction().y() > 0 && distanceY2 < distanceY1 && distanceY2 < distanceX1 && distanceY2 < distanceX2){
                 balle.direction(Position(balle.direction().x(),-1*balle.direction().y()));
                 balle.ajusterVitesse(*this);
                 --_vie;
@@ -82,7 +86,7 @@ bool BriquesCassable::collision(Balle& balle){
                 balle.ajusterVitesse(*this);
                 --_vie;
                 return true;
-            }
+            }*/
         }else{return false;}
     }
     return false;
