@@ -22,8 +22,7 @@ public:
 	void vitesse(double);
 	double vitesse()const;
 	void ajusterVitesse(const Briques& br);
-
-
+	void rebondir(int);
 
 private:
 	Position _direction;

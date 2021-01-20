@@ -21,7 +21,7 @@ class Briques:public Rectangle
 
         virtual double solidite()const =0;
         virtual int style()const=0;
-        virtual bool collision(Cercle&)=0;
+        virtual void agirCollision(Cercle&)=0;
 
 
 };

@@ -17,9 +17,9 @@ double BriquesIncassable::solidite()const{
 int BriquesIncassable::style()const{
     return 2;
 }
-bool BriquesIncassable::collision(Cercle& balle){
-    // si il y a la collision
-    if (balle.topY() < bottomY() && balle.bottomY() > topY() && balle.rightX() > leftX() && balle.leftX() < rightX()){
+void BriquesIncassable::agirCollision(Cercle& balle){
+
+    if (collision(balle)){
         double distanceX1 = abs(balle.rightX() - leftX());
         double distanceX2 = abs(balle.leftX() - rightX());
         double distanceY1 = abs(balle.topY() - bottomY());
@@ -51,5 +51,4 @@ bool BriquesIncassable::collision(Cercle& balle){
             return true;
         }*/
     }
-    return false;
 }

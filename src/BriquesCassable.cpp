@@ -44,18 +44,15 @@ int BriquesCassable::couleur()const{
 int BriquesCassable::style()const{
      return 11;
 }
-bool BriquesCassable::collision(Cercle& balle){
+void BriquesCassable::agirCollision(Cercle& balle){
     if (_vie > 0){
         // si il y a la collision
         if(Rectangle::collision(balle)){
-
-        }
-        if (balle.topY() < bottomY() && balle.bottomY() > topY() && balle.rightX() > leftX() && balle.leftX() < rightX()){
             double distanceX1 = abs(balle.rightX() - leftX());
             double distanceX2 = abs(balle.leftX() - rightX());
             double distanceY1 = abs(balle.topY() - bottomY());
             double distanceY2 = abs(balle.bottomY() - topY());
-
+            int rebond;
             //haut
             /*if (balle.direction().y() > 0 && distanceY2 < distanceY1 && distanceY2 < distanceX1 && distanceY2 < distanceX2){
                 balle.direction(Position(balle.direction().x(),-1*balle.direction().y()));
@@ -87,7 +84,7 @@ bool BriquesCassable::collision(Cercle& balle){
                 --_vie;
                 return true;
             }*/
-        }else{return false;}
+        }
     }
-    return false;
+
 }

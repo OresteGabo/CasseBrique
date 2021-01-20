@@ -1,5 +1,5 @@
 CasseBriques.layout
 CasseBriques.depend
 CasseBriques.cbp
-*.exe
-*.o
+*/*.exe
+*/*.o

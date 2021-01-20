@@ -6,7 +6,6 @@ Rectangle::Rectangle(double l,double h,const Position&p):
     _position{p}
 {
 }
-
 Rectangle::~Rectangle()
 {
 }
@@ -57,4 +56,25 @@ void Rectangle::positionX(double xPos){
 }
 bool Rectangle::collision(const Cercle&c)const{
     return c.topY() < bottomY() && c.bottomY() > topY() && c.rightX() > leftX() && c.leftX() < rightX();
+}
+int Rectangle::collisionSide(const Cercle& c)const{
+    /**
+    *   0 pour le NORD du rectaangle
+    *   1 EST
+    *   2 SUD
+    *   3 OUEST
+    */
+    double distanceX1 = abs(c.rightX() - leftX());
+    double distanceX2 = abs(c.leftX() - rightX());
+    double distanceY1 = abs(c.topY() - bottomY());
+    double distanceY2 = abs(c.bottomY() - topY());
+
+    if(/*c.direction().y() > 0 &&*/ distanceY2 < distanceY1 && distanceY2 < distanceX1 && distanceY2 < distanceX2){
+        return 0;
+    }else if(/*c.direction().x() < 0 &&*/ distanceX2 < distanceX1 && distanceX2 < distanceY1 && distanceX2 < distanceY2){
+        return 1;
+    }else if(/*c.direction().y() < 0 &&*/ distanceY1 < distanceY2 && distanceY1 < distanceX1 && distanceY1 < distanceX2){
+        return 2;
+    }
+    return 3;
 }

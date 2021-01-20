@@ -37,4 +37,23 @@ void Balle::vitesse(double v){
 double Balle::vitesse()const{
     return _vitesse;
 }
-
+void Balle::rebondir(int rebond){
+    /**
+        0:sans rebond, il renverse sa direction
+        1:le x change
+        2:le y change
+    **/
+    switch(rebond){
+    case 0:
+        _direction.xy(-_direction.x(),-_direction.y());
+        break;
+    case 1:
+        _direction.x(-_direction.x());
+        break;
+    case 2:
+        _direction.y(-_direction.y());
+        break;
+    default:
+        _direction.x(-_direction.x());
+    }
+}

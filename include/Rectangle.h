@@ -11,6 +11,7 @@ class Rectangle
 
         virtual int style()const=0;
         bool collision(const Cercle&)const;
+        int collisionSide(const Cercle&)const;
 
         Position position()const;
         void position(const Position&);

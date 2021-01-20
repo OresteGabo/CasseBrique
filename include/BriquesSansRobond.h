@@ -11,7 +11,7 @@ class BriquesSansRobond : public BriquesCassable
         BriquesSansRobond(double x,double y,int v);
         virtual ~BriquesSansRobond();
         virtual int style()const override;
-        virtual bool collision(Cercle&)override;
+        virtual void agirCollision(Cercle&)override;
 };
 
 #endif // BRIQUESSANSROBOND_H

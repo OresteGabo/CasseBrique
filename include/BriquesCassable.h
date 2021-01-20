@@ -16,7 +16,7 @@ class BriquesCassable:public Briques
         virtual bool utilisable()const override;
         virtual double solidite()const override;
         virtual int style()const override;
-        virtual bool collision(Cercle&)override;
+        virtual void agirCollision(Cercle&)override;
 
     protected:
         int _vie;
